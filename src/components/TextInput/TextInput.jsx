@@ -2,8 +2,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
-import InlineSVG from 'svg-inline-react';
-import SearchIcon from '../../static/icons/search_icon.svg';
 
 const TextInput = (props) => {
   const {

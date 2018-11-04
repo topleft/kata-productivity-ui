@@ -3,16 +3,33 @@
 
 .top-bar {
   align-items: center;
+  border-bottom: 1px solid $grey-light;
   display: flex;
   height: $sidebar-width;
-  position: fixed;
-  border-bottom: 1px solid $grey-light;
-  top: 0;
+  justify-content: space-between;
   left: $sidebar-width;
+  position: fixed;
+  top: 0;
   width: 100%;
   padding: 0 $space*3;
+  flex-grow: 0;
+  // border: 2px solid red;
+
 
   &--search {
     width: 30%;
+  }
+
+  &--right-side {
+    margin-right: $sidebar-width;
+  }
+
+  &--avatar {
+    width: 70px;
+    flex-basis: 70px;
+
+    img {
+      border-radius: 50%;
+    }
   }
 }

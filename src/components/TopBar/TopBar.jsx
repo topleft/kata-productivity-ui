@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 import TextInput from '../TextInput';
 import searchIcon from '../../static/icons/search_icon.svg';
+import profile_pic from '../../static/profile_pic.png';
 
 class TopBar extends React.Component {
   state = {
@@ -22,6 +23,12 @@ class TopBar extends React.Component {
             value={searchValue}
             handleChange={(e) => this.setState({searchValue: e.target.value})}
             icon={searchIcon}/>
+        </div>
+        <div className='top-bar--right-side'>
+          <div className='top-bar--avatar'>
+            <img src={profile_pic} alt=""/>
+          </div>
+
         </div>
       </div>
     );
