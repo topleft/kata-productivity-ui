@@ -13,7 +13,7 @@ const SidebarLink = (props) => {
       </NavLink>
     </div>
   );
-}
+};
 
 SidebarLink.propTypes = {
   children: PropTypes.any,

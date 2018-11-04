@@ -3,8 +3,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 import TextInput from '../TextInput';
+import Button from '../Button';
 import searchIcon from '../../static/icons/search_icon.svg';
 import profile_pic from '../../static/profile_pic.png';
+import PaperPlaneIcon from '../../static/icons/paper_plane_icon.svg';
 
 class TopBar extends React.Component {
   state = {
@@ -25,6 +27,7 @@ class TopBar extends React.Component {
             icon={searchIcon}/>
         </div>
         <div className='top-bar--right-side'>
+          <Button icon={PaperPlaneIcon}>Invite</Button>
           <div className='top-bar--avatar'>
             <img src={profile_pic} alt=""/>
           </div>

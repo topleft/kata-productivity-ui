@@ -22,11 +22,17 @@
 
   &--right-side {
     margin-right: $sidebar-width;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
   }
 
   &--avatar {
-    width: 70px;
+    display: inline-block;
     flex-basis: 70px;
+    width: 70px;
+    margin-left: $space*2.5;
 
     img {
       border-radius: 50%;

@@ -11,7 +11,7 @@
 
 describe('sanity', () => {
   it('template', () => {
-    expect(true).toBe(true)
-  })
+    expect(true).toBe(true);
+  });
 });
 

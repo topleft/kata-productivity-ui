@@ -17,7 +17,7 @@ const TextInput = (props) => {
 
   return (
     <div className='text-input'>
-      {Icon && <span className='text-input--icon'><Icon width={16}/></span>}
+      {Icon && <span className='text-input--icon'><Icon width={22}/></span>}
       <input
         className={icon ? 'withIcon' : ''}
         name={name}
@@ -37,6 +37,6 @@ TextInput.propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   value: PropTypes.string.isRequired,
-}
+};
 
 export default TextInput;

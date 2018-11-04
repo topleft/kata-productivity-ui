@@ -1,0 +1,27 @@
+@import '../../styles/variables.scss';
+
+.button {
+  display: inline-block;
+  position: relative;
+
+  & button {
+    background-color: transparent;
+    border-radius: 2px;
+    border-color: $blue-light;
+    box-shadow: none;
+    color: $blue-light;
+    cursor: pointer;
+    padding: $space*0.66;
+
+    &.with-icon {
+      padding: $space*0.66 $space $space*0.66 $space*2.2;
+    }
+  }
+
+  &--icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
