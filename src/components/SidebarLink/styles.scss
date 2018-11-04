@@ -8,10 +8,6 @@
   position: relative;
   width: 100%;
 
-  &--icon svg {
-    height: $space*1.5;
-  }
-
   & .active {
     &:before {
       background-color: $blue;

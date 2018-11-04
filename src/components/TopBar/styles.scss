@@ -1,11 +1,18 @@
 @import '../../styles/variables.scss';
 
 
-.search-bar {
+.top-bar {
+  align-items: center;
+  display: flex;
   height: $sidebar-width;
   position: fixed;
   border-bottom: 1px solid $grey-light;
   top: 0;
   left: $sidebar-width;
   width: 100%;
+  padding: 0 $space*3;
+
+  &--search {
+    width: 30%;
+  }
 }

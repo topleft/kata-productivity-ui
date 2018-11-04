@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom';
 import SidebarLink from  '../SidebarLink';
 import './styles.scss';
-import InlineSVG from 'svg-inline-react';
 import dashboardIcon from '../../static/icons/dashboard_icon.svg';
 import conversationsIcon from '../../static/icons/conversations_icon.svg';
 import filesboardIcon from '../../static/icons/files_board_icon.svg';
 import eventsIcon from '../../static/icons/events_icon.svg';
 import sessionsIcon from '../../static/icons/sessions_icon.svg';
 import settingsIcon from '../../static/icons/settings_icon.svg';
-import logo from '../../static/icons/logo.svg';
+import Logo from '../../static/icons/logo.svg';
 
 class Sidebar extends React.Component {
   propTypes = {};
@@ -57,11 +56,12 @@ class Sidebar extends React.Component {
 
   renderLinks() {
     return this.links.map((link, i) => {
+      const Icon = link.icon;
       return <SidebarLink
         key={i}
         to={link.to}
         {...this.props}>
-        <InlineSVG src={link.icon}/>
+        <Icon width={22}/>
       </SidebarLink>;
     });
   }
@@ -70,7 +70,7 @@ class Sidebar extends React.Component {
     return (
       <div className='sidebar'>
         <div className='sidebar--logo'>
-          <InlineSVG src={logo}/>
+          <Logo width={'30%'}/>
         </div>
         <nav className='sidebar--nav'>
           {this.renderLinks()}
