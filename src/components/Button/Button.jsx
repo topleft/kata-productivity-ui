@@ -7,12 +7,15 @@ const Button = (props) => {
   const {
     handleClick,
     children,
-    icon
+    icon,
+    type,
   } = props;
+
   const Icon = icon;
+
   return (
-    <div className='button'>
-      <button className={Icon ? 'with-icon' : ''} onClick={handleClick}>
+    <div className={`button`}>
+      <button className={`button--btn button--${type} ${Icon ? 'button--with-icon' : ''}`} onClick={handleClick}>
         {Icon && <Icon className={'button--icon'} width={20}/>}
         {children}
       </button>
@@ -20,6 +23,15 @@ const Button = (props) => {
   );
 };
 
-Button.propTypes = {};
+Button.defaultProps = {
+  type: 'solid',
+};
+
+Button.propTypes = {
+  children: PropTypes.any,
+  handleClick: PropTypes.func,
+  icon: PropTypes.element,
+  type: PropTypes.oneOf(['outline', 'solid'])
+};
 
 export default Button;

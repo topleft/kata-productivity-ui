@@ -27,7 +27,12 @@ class TopBar extends React.Component {
             icon={searchIcon}/>
         </div>
         <div className='top-bar--right-side'>
-          <Button icon={PaperPlaneIcon}>Invite</Button>
+          <Button
+            type='outline'
+            handleClick={() => console.log('CLICK: invite button')}
+            icon={PaperPlaneIcon}>
+            Invite
+          </Button>
           <div className='top-bar--avatar'>
             <img src={profile_pic} alt=""/>
           </div>

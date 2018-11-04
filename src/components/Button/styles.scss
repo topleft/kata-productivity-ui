@@ -4,18 +4,37 @@
   display: inline-block;
   position: relative;
 
-  & button {
-    background-color: transparent;
+  &--btn {
     border-radius: 2px;
-    border-color: $blue-light;
     box-shadow: none;
-    color: $blue-light;
     cursor: pointer;
     padding: $space*0.66;
+  }
 
-    &.with-icon {
-      padding: $space*0.66 $space $space*0.66 $space*2.2;
+  &--outline {
+    background-color: transparent;
+    border-color: $blue-light;
+    color: $blue-light;
+
+    &:hover {
+      background-color: $blue;
+      border-color: $blue;
+      color: $white;
+      svg > {
+        stroke: $white;
+      }
     }
+  }
+
+  &--solid {
+    background-color: $blue;
+    border-color: $blue;
+    color: $white;
+  }
+
+  &--with-icon {
+    padding-right: $space;
+    padding-left: $space*2.2;
   }
 
   &--icon {
