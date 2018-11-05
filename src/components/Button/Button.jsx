@@ -11,12 +11,12 @@ const Button = (props) => {
     type,
   } = props;
 
-  const Icon = icon;
+  const Icon = icon; // needs to be a capitalized for react to know it is a component
 
   return (
-    <div className={`button`}>
+    <div className={'button'}>
       <button className={`button--btn button--${type} ${Icon ? 'button--with-icon' : ''}`} onClick={handleClick}>
-        {Icon && <Icon className={'button--icon'} width={20}/>}
+        {Icon && <Icon className={'button--icon'} width={20} height={20}/>}
         {children}
       </button>
     </div>

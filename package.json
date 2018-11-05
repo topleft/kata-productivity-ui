@@ -8,7 +8,8 @@
     "build": "webpack --config ./webpack/config.build.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "lint:fixt": "eslint --fix src/**/**/*.jsx"
+    "lint:fix": "eslint --fix src/**/**/*.jsx",
+    "svgo": "svgo -f ./src/static/icons"
   },
   "browserslist": [
     "last 2 version"
