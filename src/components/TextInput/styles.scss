@@ -1,0 +1,39 @@
+@import '../../styles/variables.scss';
+
+.text-input {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+
+  input {
+    width: 100%;
+    font-size: $font-size-16;
+    border: none;
+    border-bottom: solid 1px transparent;
+    background-color: transparent;
+    padding: $space*0.5;
+
+    &:focus {
+      outline: none;
+      border-bottom: solid 1px $blue;
+    }
+
+    &.withIcon {
+      padding-left: $space*2;
+    }
+
+  }
+
+  &--icon {
+    position: absolute;
+    width: 16px;
+    left: 0;
+    top: 56%;
+    transform: translateY(-50%);
+  }
+
+
+  ::placeholder {
+    color: $grey-light;
+  }
+}

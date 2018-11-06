@@ -7,7 +7,9 @@
     "dev": "webpack-dev-server --open --config ./webpack/config.development.js",
     "build": "webpack --config ./webpack/config.build.js",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "lint:fix": "eslint --fix src/**/**/*.jsx",
+    "svgo": "svgo -f ./src/static/icons"
   },
   "browserslist": [
     "last 2 version"
@@ -54,7 +56,8 @@
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-router-dom": "4.2.2"
+    "react-router-dom": "4.2.2",
+    "react-svg-loader": "^2.1.0"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/test/setupEnzyme.js",

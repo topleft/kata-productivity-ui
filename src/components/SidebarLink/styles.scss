@@ -2,15 +2,12 @@
 
 
 .sidebar-link {
+  color: $blue-dark;
   display: flex;
   justify-content: center;
   margin-bottom: $space*3;
   position: relative;
   width: 100%;
-
-  &--icon svg {
-    height: $space*1.5;
-  }
 
   & .active {
     &:before {

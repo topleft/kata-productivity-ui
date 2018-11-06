@@ -8,19 +8,19 @@ describe('SidebarLink', () => {
     expect(wrapper.exists()).toBe(true);
   });
 
-  it('should render children', () => {
-    const children = 'Test 123';
-    const wrapper = shallow(<SidebarLink>{children}</SidebarLink>);
-    const result = wrapper.find('.sidebar-link--icon').text();
-    expect(result).toBe(children);
-  });
-
   it('should render a nav link', () => {
     const wrapper = shallow(<SidebarLink/>);
     expect(wrapper.find('NavLink')).toHaveLength(1);
   });
 
-  it('should render a nav link and apply the to property', () => {
+  it('should render children', () => {
+    const children = 'Test 123';
+    const wrapper = shallow(<SidebarLink>{children}</SidebarLink>);
+    const result = wrapper.find('.sidebar-link--label').text();
+    expect(result).toContain(children);
+  });
+
+  it('should render a nav link and apply the \'to\' property', () => {
     const path = '/the-place';
     const wrapper = shallow(<SidebarLink to={path}/>);
     const navLink = wrapper.find('NavLink');

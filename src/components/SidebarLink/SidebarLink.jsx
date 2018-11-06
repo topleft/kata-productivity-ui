@@ -9,11 +9,11 @@ const SidebarLink = (props) => {
   return (
     <div className='sidebar-link'>
       <NavLink to={to}>
-        <span className='sidebar-link--icon'>{children}</span>
+        <span className='sidebar-link--label'>{children}</span>
       </NavLink>
     </div>
   );
-}
+};
 
 SidebarLink.propTypes = {
   children: PropTypes.any,

@@ -1,0 +1,41 @@
+@import '../../styles/variables.scss';
+
+
+.top-bar {
+  align-items: center;
+  border-bottom: 1px solid $grey-light;
+  display: flex;
+  height: $sidebar-width;
+  justify-content: space-between;
+  left: $sidebar-width;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0 $space*3;
+  flex-grow: 0;
+  // border: 2px solid red;
+
+
+  &--search {
+    width: 30%;
+  }
+
+  &--right-side {
+    margin-right: $sidebar-width;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+  }
+
+  &--avatar {
+    display: inline-block;
+    flex-basis: 70px;
+    width: 70px;
+    margin-left: $space*2.5;
+
+    img {
+      border-radius: 50%;
+    }
+  }
+}

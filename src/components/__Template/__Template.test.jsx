@@ -6,12 +6,12 @@
 //   it('should render', () => {
 //     const wrapper = shallow(<__Template/>);
 //     expect(wrapper.exists()).toBe(true);
-//   })
+//   });
 // });
 
 describe('sanity', () => {
   it('template', () => {
-    expect(true).toBe(true)
-  })
+    expect(true).toBe(true);
+  });
 });
 

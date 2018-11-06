@@ -12,11 +12,7 @@
   &--logo {
     display: flex;
     justify-content: center;
-
-    i {
-      width: 30%;
-      margin-top: 40px;
-    }
+    height: $sidebar-width;
   }
 
   &--nav {

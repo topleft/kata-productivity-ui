@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch, Redirect, NavLink } from "react-router-dom";
-import SearchBar from './components/SearchBar';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import TopBar from './components/TopBar';
 import Sidebar from './components/Sidebar';
 import './styles/main.scss';
 
@@ -24,7 +24,7 @@ const App = () => (
   <BrowserRouter>
     <div>
       <div className='main-content'>
-        <SearchBar/>
+        <TopBar/>
         <Sidebar/>
         <Switch>
           <Route path='/dashboard' component={Dashboard}></Route>
