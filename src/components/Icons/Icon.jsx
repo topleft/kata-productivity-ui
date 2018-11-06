@@ -5,9 +5,11 @@ const Icon = ({
   children,
   className,
   fill,
+  fillOpacity,
   height,
   width,
   stroke,
+  strokeWidth,
   title,
   viewBox}) => {
   return (
@@ -15,8 +17,10 @@ const Icon = ({
       aria-labelledby={`${title}-id`}
       className={className}
       fill={fill}
+      fillOpacity={fillOpacity}
       height={height}
       stroke={stroke}
+      strokeWidth={strokeWidth}
       viewBox={viewBox}
       width={width}
       xmlns='http://www.w3.org/2000/svg'>
@@ -30,17 +34,20 @@ Icon.propTypes = {
   children: PropTypes.element,
   className: PropTypes.string,
   fill: PropTypes.string,
-  height: PropTypes.number,
+  fillOpacity: PropTypes.number,
+  height: PropTypes.oneOfType(PropTypes.number, PropTypes.string),
   stroke: PropTypes.string,
+  strokeWidth: PropTypes.number,
   title: PropTypes.string,
   viewBox: PropTypes.string,
-  width: PropTypes.number,
+  width: PropTypes.oneOfType(PropTypes.number, PropTypes.string),
 };
 
 Icon.defaultProps = {
   fill: 'currentColor',
   height: '20',
   stroke: 'currentColor',
+  strokeWidth: 1,
   width: '20',
 };
 

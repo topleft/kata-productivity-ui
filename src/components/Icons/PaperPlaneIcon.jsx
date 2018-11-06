@@ -13,4 +13,8 @@ const PaperPlaneIcon = (props) => {
   );
 };
 
+PaperPlaneIcon.defaultProps = {
+  title: 'PaperPlaneIcon'
+};
+
 export default PaperPlaneIcon;

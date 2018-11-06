@@ -4,9 +4,8 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 import TextInput from '../TextInput';
 import Button from '../Button';
-import searchIcon from '../../static/icons/search_icon.svg';
 import profile_pic from '../../static/profile_pic.png';
-import {PaperPlaneIcon} from '../Icons';
+import {PaperPlaneIcon, SearchIcon} from '../Icons';
 
 class TopBar extends React.Component {
   state = {
@@ -24,7 +23,7 @@ class TopBar extends React.Component {
             placeholder='Find a user team, user, meeting...'
             value={searchValue}
             handleChange={(e) => this.setState({searchValue: e.target.value})}
-            icon={searchIcon}/>
+            icon={SearchIcon}/>
         </div>
         <div className='top-bar--right-side'>
           <Button
