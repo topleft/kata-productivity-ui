@@ -6,7 +6,7 @@
 //   it('should render', () => {
 //     const wrapper = shallow(<__Template/>);
 //     expect(wrapper.exists()).toBe(true);
-//   })
+//   });
 // });
 
 describe('sanity', () => {
