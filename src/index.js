@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import TopBar from './components/TopBar';
 import Sidebar from './components/Sidebar';
+import Aside from './components/Aside';
 import './styles/main.scss';
 
 const Conversations = () => <h1>Conversations</h1>;
@@ -26,6 +27,7 @@ const App = () => (
       <div className='main-content'>
         <TopBar/>
         <Sidebar/>
+        <Aside/>
         <Switch>
           <Route path='/dashboard' component={Dashboard}></Route>
           <Route path='/sessions' component={Sessions}></Route>
