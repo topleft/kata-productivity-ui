@@ -9,7 +9,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "lint:fix": "eslint --fix src/**/**/*.jsx",
-    "svgo": "svgo -f ./src/static/icons"
+    "svgo": "svgo -f ./src/static"
   },
   "browserslist": [
     "last 2 version"

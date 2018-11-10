@@ -1,7 +1,7 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
+import UploadAside from '../UploadAside';
 
 class Aside extends React.Component {
   state = {}
@@ -12,8 +12,13 @@ class Aside extends React.Component {
   }
 
   render() {
-    return <div className='aside'></div>;
+    return (
+      <div className='aside'>
+        <UploadAside/>
+      </div>
+    );
   }
+
 }
 
 export default Aside;

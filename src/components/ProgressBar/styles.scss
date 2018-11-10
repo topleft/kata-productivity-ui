@@ -1,0 +1,28 @@
+@import '../../styles/variables.scss';
+
+.progress-bar {
+  height: $space*0.4;
+  width: 100%;
+  margin: $space*.5 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &--place {
+    background-color: $blue-background;
+    border-radius: $space*0.4;
+    height: 100%;
+    width: 100%;
+  }
+
+  &--fill {
+    background-color: $blue;
+    border-radius: $space*0.4;
+    height: 100%;
+  }
+
+  &--icon {
+    margin-left: $space;
+  }
+
+}

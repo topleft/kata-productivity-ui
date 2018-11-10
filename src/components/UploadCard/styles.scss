@@ -1,0 +1,29 @@
+@import '../../styles/variables.scss';
+
+.upload-card {
+  margin: $space*3 0;
+
+  &--file-size {
+    color: $grey-text;
+    font-size: $font-size-14;
+    margin: $space 0;
+  }
+
+  &--unit {
+    text-transform: uppercase;
+    font-size: $font-size-11;
+  }
+
+  &--file-name {
+    margin: $space 0;
+  }
+
+  &--link {
+    color: $blue-light;
+    font-weight: 700;
+    font-size: $font-size-11;
+    a {
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import '../../styles/variables.scss';
+
+.upload-aside {
+  padding: $space*1.8;
+
+  &--header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: $space*3;
+
+    &--text {
+      display: flex;
+      flex-direction: column;
+      padding-left: $space*1.25;
+
+      &--title {
+        font-weight: normal;
+        padding-bottom: $space*0.4;
+      }
+
+      &--date {
+        color: $grey-text;
+      }
+
+    }
+  }
+}
