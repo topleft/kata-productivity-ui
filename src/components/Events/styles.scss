@@ -1,0 +1,11 @@
+@import '../../styles/variables.scss';
+
+
+.events {
+  padding: $space*2.5;
+
+  &--title {
+    font-weight: normal;
+  }
+
+}

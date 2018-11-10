@@ -12,7 +12,10 @@ class __Template extends React.Component {
   }
 
   render() {
-    return <div className='__template'></div>;
+    return (
+      <div className='__template'>
+      </div>
+    );
   }
 }
 

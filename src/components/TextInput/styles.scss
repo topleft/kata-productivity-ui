@@ -5,23 +5,51 @@
   width: 100%;
   position: relative;
 
-  input {
-    width: 100%;
-    font-size: $font-size-16;
-    border: none;
-    border-bottom: solid 1px transparent;
+  & label {
+    color: $grey-text;
+    font-size: $font-size-11;
+    text-transform: uppercase;
+  }
+
+  & input {
     background-color: transparent;
-    padding: $space*0.5;
+    font-size: $font-size-16;
+    margin-top: $space*0.8;
+    padding: $space*0.9;
+    width: 100%;
 
     &:focus {
       outline: none;
-      border-bottom: solid 1px $blue;
+    }
+  }
+
+  &-outline {
+    & input {
+      border: solid 1px $grey-light;
+      border-radius: 4px;
+
+      &:focus {
+        border-radius: 4px;
+        border: solid 1px $blue;
+      }
     }
 
-    &.withIcon {
-      padding-left: $space*2;
-    }
+  }
 
+  &-no-outline {
+    & input {
+      border: none;
+      border-bottom: solid 1px transparent;
+
+      &:focus {
+        border-bottom: solid 1px $blue;
+      }
+
+      &.withIcon {
+        padding-left: $space*2;
+      }
+
+    }
   }
 
   &--icon {
@@ -32,6 +60,12 @@
     transform: translateY(-50%);
   }
 
+  &--button {
+    position: absolute;
+    right: 10px;
+    top: 70%;
+    transform: translateY(-50%);
+  }
 
   ::placeholder {
     color: $grey-light;

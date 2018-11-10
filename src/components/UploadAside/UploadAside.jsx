@@ -28,8 +28,9 @@ class UploadAside extends React.Component {
             <div className='upload-aside--header--text--date'>{this.date}</div>
           </div>
         </div>
-        <UploadCard fileSize={10.9} fileName={'sample_file.pdf'} percentComplete={59}/>
-        <UploadCard fileSize={10.9} fileName={'test_image.png'} percentComplete={100}/>
+        <UploadCard fileSize={3.2} fileName={'test_image.png'} percentComplete={100}/>
+        <UploadCard fileSize={2.9} fileName={'sample_file.pdf'} percentComplete={59}/>
+        <UploadCard fileSize={4.12} fileName={'population.csv'} percentComplete={4}/>
       </div>
     );
   }

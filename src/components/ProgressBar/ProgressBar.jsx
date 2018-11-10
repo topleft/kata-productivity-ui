@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 import {CheckIcon, CancelIcon} from '../Icons';
 
-const ProgressBar = ({percentComplete}) => {
+const ProgressBar = ({percentComplete, handleCancelClick}) => {
   const style = {
     width: `${percentComplete}%`
   }
@@ -19,7 +19,12 @@ const ProgressBar = ({percentComplete}) => {
             ?
             <CheckIcon height={14} width={14} fill={'#4192EC'}/>
             :
-            <CancelIcon height={14} width={14} fill={'#FF6D4A'}/>
+            <CancelIcon
+              height={14}
+              width={14}
+              fill={'#FF6D4A'}
+              onClick={handleCancelClick}
+              className='progress-bar--icon-cancel'/>
         }
       </div>
     </div>

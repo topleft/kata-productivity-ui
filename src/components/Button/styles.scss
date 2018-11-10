@@ -23,6 +23,10 @@
     }
   }
 
+  &--skinny {
+    padding: $space*0.46;
+  }
+
   &--solid {
     background-color: $blue;
     border-color: $blue;

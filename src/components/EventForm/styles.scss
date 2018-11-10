@@ -1,0 +1,21 @@
+@import '../../styles/variables.scss';
+
+.event-form {
+  margin-top: $space*3;
+  display: flex;
+
+  &--main {
+    padding: $space*2;
+    margin-right: $space*3;
+    background-color: $white;
+    border-radius: 2px;
+    width: 60%;
+  }
+
+  &--side {
+    padding: $space*2;
+    width: 35%;
+    border-radius: 2px;
+    background-color: $white;
+  }
+}

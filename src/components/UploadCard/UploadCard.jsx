@@ -22,7 +22,7 @@ const UploadCard = (props) => {
       <div className='upload-card--file-name'>
         {fileName}
       </div>
-      <div className='upload-card--link'>
+      <div className={`upload-card--link ${percentComplete < 100 ? 'incomplete' : ''}`}>
         <a href={fileLink} target='_blank' rel='noopener noreferrer'>View File</a>
       </div>
     </div>

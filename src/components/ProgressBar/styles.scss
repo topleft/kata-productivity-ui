@@ -23,6 +23,9 @@
 
   &--icon {
     margin-left: $space;
+    &-cancel {
+      cursor: pointer;
+    }
   }
 
 }
