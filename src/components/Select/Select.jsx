@@ -8,7 +8,12 @@ class __Template extends React.Component {
     open: false,
     selected: null,
   }
+
   propTypes = {}
+
+  defaultProps = {
+    width: '100%'
+  }
 
   constructor() {
     super();
@@ -20,11 +25,11 @@ class __Template extends React.Component {
   }
 
   render() {
-    const {options, value, label} = this.props;
+    const {options, value, label, width} = this.props;
 
     return (
-      <div className="select" onClick={() => this.setState({open: !this.state.open})}>
-        <div className="select--label" id="age-label">{label}</div>
+      <div className="select" onClick={() => this.setState({open: !this.state.open})} style={{width: width}}>
+        <label className="select--label" id="age-label">{label}</label>
         <div className="select--input">
           <div className="select--combobox" role="combobox" tabIndex="0" aria-autocomplete="none" aria-owns="age-list" aria-expanded="false" aria-labelledby="age-label" aria-required="true" aria-activedescendant="default">
             <div className="select--value">{value || 'Select...'}</div>

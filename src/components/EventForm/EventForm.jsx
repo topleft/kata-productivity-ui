@@ -5,6 +5,7 @@ import './styles.scss';
 import TextInput from '../TextInput';
 import Button from '../Button';
 import Select from '../Select';
+import NumberInput from '../NumberInput';
 
 class EventForm extends React.Component {
   state = {
@@ -23,7 +24,14 @@ class EventForm extends React.Component {
   }
 
   render() {
-    const {title, location, duration} = this.state;
+    const {
+      title,
+      location,
+      duration,
+      hour,
+      minute
+    } = this.state;
+
     const titleButtonProps = {
       children: '+ Add description',
       type: 'outline'
@@ -48,7 +56,20 @@ class EventForm extends React.Component {
               handleChange={(e) => this.setState({title: e.target.value})}/>
           </div>
           <div className='event-form--line'>
+            <NumberInput
+              name='hour'
+              width={'90px'}
+              label={'Hour'}
+              value={hour}
+              handleChange={(e) => this.setState({hour: e.target.value})}/>
+            <NumberInput
+              name='minute'
+              width={'90px'}
+              label={'Minute'}
+              value={minute}
+              handleChange={(e) => this.setState({minute: e.target.value})}/>
             <Select
+              width={'40%'}
               options={this.durationOptions}
               label={'Duration'}
               value={duration}

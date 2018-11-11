@@ -20,6 +20,16 @@
   }
 
   &--line {
+    display: flex;
+    align-items: baseline;
     margin-bottom: $space*2;
+
+    div {
+      padding-right: $space;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
   }
 }
