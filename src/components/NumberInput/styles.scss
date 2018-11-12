@@ -67,6 +67,11 @@
         border-top: solid 1px $grey-light;
         border-radius: 0 0 4px 0;
       }
+
+      &:active {
+        border-color: $grey-light;
+        border: solid 1px $grey-light;
+      }
     }
 
   }

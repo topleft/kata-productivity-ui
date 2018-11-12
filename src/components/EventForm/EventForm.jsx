@@ -12,6 +12,8 @@ class EventForm extends React.Component {
     title: '',
     location: '',
     duration: null,
+    hour: 0,
+    minute: 0,
   }
   propTypes = {}
   durationOptions = [
@@ -21,6 +23,14 @@ class EventForm extends React.Component {
 
   constructor() {
     super();
+  }
+
+  handleIncrement(e, name, sign) {
+    const val = sign === '+' ? 1 : -1;
+    this.setState((state) => {
+      const current = state[name];
+      return {[name]: current + val};
+    });
   }
 
   render() {
@@ -61,12 +71,14 @@ class EventForm extends React.Component {
               width={'90px'}
               label={'Hour'}
               value={hour}
+              handleIncrement={(e, name, sign) => this.handleIncrement(e, name, sign)}
               handleChange={(e) => this.setState({hour: e.target.value})}/>
             <NumberInput
               name='minute'
               width={'90px'}
               label={'Minute'}
               value={minute}
+              handleIncrement={(e, name, sign) => this.handleIncrement(e, name, sign)}
               handleChange={(e) => this.setState({minute: e.target.value})}/>
             <Select
               width={'40%'}
