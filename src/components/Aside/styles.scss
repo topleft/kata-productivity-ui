@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+.aside {
+  background-color: $white;
+  right: 0;
+  top: $sidebar-width;
+  position: fixed;
+  width: $aside-width;
+  height: 100%;
+}

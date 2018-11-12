@@ -4,7 +4,12 @@ body {
   background-color: $white-tint;
 }
 
-.main-content {
-  padding-left: $sidebar-width;
-  padding-top: $sidebar-width;
+.content {
+  &--page {
+    margin-left: $sidebar-width;
+    margin-right: $aside-width;
+    margin-top: $sidebar-width;
+    background-color: $grey-blue;
+    height: 100vh;
+  }
 }
