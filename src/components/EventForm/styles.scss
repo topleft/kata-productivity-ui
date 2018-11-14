@@ -20,16 +20,21 @@
   }
 
   &--line {
+    align-items: flex-end;
     display: flex;
-    align-items: baseline;
-    margin-bottom: $space*2;
+    flex-wrap: wrap;
 
-    div {
+    &--item {
+      display: inline-block;
+      margin-bottom: $space*2;
       padding-right: $space;
+      width: 100%;
+
+      &:last-child {
+        padding-right: 0;
+      }
     }
 
-    &:last-child {
-      padding-right: 0;
-    }
   }
+
 }
