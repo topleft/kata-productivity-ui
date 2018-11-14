@@ -55,6 +55,7 @@
   "dependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
+    "react-dates": "^18.2.2",
     "react-dom": "^16.4.1",
     "react-router-dom": "4.2.2",
     "react-svg-loader": "^2.1.0"

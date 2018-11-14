@@ -1,0 +1,45 @@
+@import '../../styles/variables.scss';
+
+
+.date-input {
+  display: flex;
+  flex-direction: column;
+
+  &--label {
+    color: $grey-text;
+    font-size: $font-size-11;
+    text-transform: uppercase;
+    padding-left: 2px;
+  }
+
+  & .SingleDatePicker {
+    margin-top: $space*0.8;
+    color: $black !important;
+
+    &Input {
+      display: flex;
+
+      &__withBorder {
+        border-color: $grey-light;
+      }
+    }
+  }
+
+  & .DateInput {
+    width: 80%;
+
+    &_input {
+      color: $black !important;
+      font-family: inherit !important;
+      font-size: inherit !important;
+      ::placeholder {
+        color: $grey-text;
+      }
+    }
+  }
+
+  & .SingleDatePickerInput_calendarIcon_svg {
+    fill: $blue;
+  }
+
+}

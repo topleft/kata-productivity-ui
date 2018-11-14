@@ -6,6 +6,7 @@ import TextInput from '../TextInput';
 import Button from '../Button';
 import Select from '../Select';
 import NumberInput from '../NumberInput';
+import DateInput from '../DateInput';
 
 class EventForm extends React.Component {
   state = {
@@ -14,6 +15,8 @@ class EventForm extends React.Component {
     duration: null,
     hour: 0,
     minute: 0,
+    date: null,
+    dateFocused: false
   }
   propTypes = {}
   durationOptions = [
@@ -55,48 +58,63 @@ class EventForm extends React.Component {
       <div className='event-form'>
         <div className='event-form--main'>
           <div className='event-form--line'>
-            <TextInput
-              button={Button}
-              buttonProps={titleButtonProps}
-              label='title'
-              name='title'
-              placeholder='Enter a title...'
-              type='outline'
-              value={title}
-              handleChange={(e) => this.setState({title: e.target.value})}/>
+            <div className='event-form--line--item'>
+              <TextInput
+                button={Button}
+                buttonProps={titleButtonProps}
+                label='title'
+                name='title'
+                placeholder='Enter a title...'
+                type='outline'
+                value={title}
+                handleChange={(e) => this.setState({title: e.target.value})}/>
+            </div>
           </div>
           <div className='event-form--line'>
-            <NumberInput
-              name='hour'
-              width={'90px'}
-              label={'Hour'}
-              value={hour}
-              handleIncrement={(e, name, sign) => this.handleIncrement(e, name, sign)}
-              handleChange={(e) => this.setState({hour: e.target.value})}/>
-            <NumberInput
-              name='minute'
-              width={'90px'}
-              label={'Minute'}
-              value={minute}
-              handleIncrement={(e, name, sign) => this.handleIncrement(e, name, sign)}
-              handleChange={(e) => this.setState({minute: e.target.value})}/>
-            <Select
-              width={'40%'}
-              options={this.durationOptions}
-              label={'Duration'}
-              value={duration}
-              handleSelect={(value) => this.setState({duration: value})}/>
+            <div className='event-form--line--item' style={{width: '35%'}}>
+              <DateInput
+                label={'Date'}
+                date={this.state.date}
+                focused={this.state.dateFocused}
+                handleDateChange={date => this.setState({ date })}
+                handleFocusChange={focused => this.setState({ dateFocused: focused })} />
+            </div>
+            <div className='event-form--line--item' style={{width: '20%'}}>
+              <NumberInput
+                name='hour'
+                label={'Hour'}
+                value={hour}
+                handleIncrement={(e, name, sign) => this.handleIncrement(e, name, sign)}
+                handleChange={(e) => this.setState({hour: e.target.value})}/>
+            </div>
+            <div className='event-form--line--item' style={{width: '20%'}}>
+              <NumberInput
+                name='minute'
+                label={'Minute'}
+                value={minute}
+                handleIncrement={(e, name, sign) => this.handleIncrement(e, name, sign)}
+                handleChange={(e) => this.setState({minute: e.target.value})}/>
+            </div>
+            <div className='event-form--line--item' style={{width: '25%'}}>
+              <Select
+                options={this.durationOptions}
+                label={'Duration'}
+                value={duration}
+                handleSelect={(value) => this.setState({duration: value})}/>
+            </div>
           </div>
           <div className='event-form--line'>
-            <TextInput
-              button={Button}
-              buttonProps={locationButtonProps}
-              label='location'
-              name='location'
-              placeholder='Enter a location...'
-              type='outline'
-              value={location}
-              handleChange={(e) => this.setState({location: e.target.value})}/>
+            <div className='event-form--line--item'>
+              <TextInput
+                button={Button}
+                buttonProps={locationButtonProps}
+                label='location'
+                name='location'
+                placeholder='Enter a location...'
+                type='outline'
+                value={location}
+                handleChange={(e) => this.setState({location: e.target.value})}/>
+            </div>
           </div>
         </div>
         <div className='event-form--side'>
