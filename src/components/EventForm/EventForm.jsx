@@ -6,17 +6,22 @@ import TextInput from '../TextInput';
 import Button from '../Button';
 import Select from '../Select';
 import NumberInput from '../NumberInput';
+import IncrementInput from '../IncrementInput';
 import DateInput from '../DateInput';
+
+const hours = [ '12am', '1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm', '10pm', '11pm']
 
 class EventForm extends React.Component {
   state = {
     title: '',
     location: '',
     duration: null,
-    hour: 0,
+    hourIndex: 8,
+    hourValue: hours[8],
     minute: 0,
     date: null,
-    dateFocused: false
+    dateFocused: false,
+
   }
   propTypes = {}
   durationOptions = [
@@ -36,12 +41,23 @@ class EventForm extends React.Component {
     });
   }
 
+  handleHourIncrement(e, name, sign) {
+
+    const val = sign === '+' ? 1 : -1;
+    this.setState((state) => {
+      const current = state['hourIndex'];
+      let newIndex = current + val;
+      newIndex = newIndex > 23 ? 0 : newIndex < 0 ? 23 : newIndex;
+      return {hourValue: hours[newIndex], hourIndex: newIndex};
+    });
+  }
+
   render() {
     const {
       title,
       location,
       duration,
-      hour,
+      hourValue,
       minute
     } = this.state;
 
@@ -80,12 +96,12 @@ class EventForm extends React.Component {
                 handleFocusChange={focused => this.setState({ dateFocused: focused })} />
             </div>
             <div className='event-form--line--item' style={{width: '20%'}}>
-              <NumberInput
+              <IncrementInput
                 name='hour'
                 label={'Hour'}
-                value={hour}
-                handleIncrement={(e, name, sign) => this.handleIncrement(e, name, sign)}
-                handleChange={(e) => this.setState({hour: e.target.value})}/>
+                value={hourValue}
+                handleIncrement={(e, name, sign) => this.handleHourIncrement(e, name, sign)}
+                handleChange={(e) => this.setState({hourValue: e.target.value})}/>
             </div>
             <div className='event-form--line--item' style={{width: '20%'}}>
               <NumberInput
