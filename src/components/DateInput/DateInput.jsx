@@ -16,7 +16,7 @@ const DateInput = (props) => {
   } = props;
 
   return (
-    <div className='date-input'>
+    <div className={`date-input ${focused ? 'focused' : ''}`}>
       <label className='date-input--label' htmlFor="date-picker">{label}</label>
       <SingleDatePicker
         showDefaultInputIcon
@@ -29,7 +29,7 @@ const DateInput = (props) => {
       />
     </div>
   );
-}
+};
 
 DateInput.propTypes = {};
 

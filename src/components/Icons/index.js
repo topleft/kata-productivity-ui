@@ -10,4 +10,5 @@ exports.SearchIcon = require('./SearchIcon').default;
 exports.UploadIcon = require('./UploadIcon').default;
 exports.CancelIcon = require('./CancelIcon').default;
 exports.CheckIcon = require('./CheckIcon').default;
+exports.CircleCheckIcon = require('./CircleCheckIcon').default;
 

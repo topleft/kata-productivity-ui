@@ -22,6 +22,17 @@
       &__withBorder {
         border-color: $grey-light;
       }
+
+      &_calendarIcon {
+        background-color: $white-tint;
+        border-left: solid 1px $grey-light;
+        margin: 0;
+        padding: 10px 15px;
+      }
+
+      &_calendarIcon_svg {
+        fill: $blue;
+      }
     }
   }
 
@@ -35,11 +46,15 @@
       ::placeholder {
         color: $grey-text;
       }
+
+      &__focused {
+        border-color: transparent;
+      }
     }
   }
 
-  & .SingleDatePickerInput_calendarIcon_svg {
-    fill: $blue;
+  &.focused
+  .SingleDatePickerInput__withBorder {
+    border-color: $blue;
   }
-
 }
