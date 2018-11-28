@@ -171,6 +171,11 @@ class EventForm extends React.Component {
           </div>
           <div className='event-form--line'>
             <div className='event-form--line--item'>
+              {this.renderTimeSentence()}
+            </div>
+          </div>
+          <div className='event-form--line'>
+            <div className='event-form--line--item'>
               <TextInput
                 button={Button}
                 buttonProps={locationButtonProps}
@@ -181,9 +186,6 @@ class EventForm extends React.Component {
                 value={location}
                 handleChange={(e) => this.setState({location: e.target.value})}/>
             </div>
-          </div>
-          <div className='event-form--line'>
-            {this.renderTimeSentence()}
           </div>
         </div>
         <div className='event-form--side'>
