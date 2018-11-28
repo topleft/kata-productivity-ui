@@ -29,7 +29,7 @@ const DateInput = (props) => {
       />
     </div>
   );
-}
+};
 
 DateInput.propTypes = {};
 

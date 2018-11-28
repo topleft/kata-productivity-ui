@@ -35,6 +35,18 @@
       }
     }
 
+    & .summary-message {
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+
+      span {
+        color: $grey-text;
+        font-size: $font-size-14;
+        padding-left: 10px;
+      }
+    }
+
   }
 
 }
