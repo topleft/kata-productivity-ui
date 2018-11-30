@@ -8,6 +8,7 @@ import Select from '../Select';
 import NumberInput from '../NumberInput';
 import IncrementInput from '../IncrementInput';
 import DateInput from '../DateInput';
+import FileUploader from '../FileUploader';
 import {CircleCheckIcon} from '../Icons';
 import moment from 'moment';
 
@@ -185,6 +186,11 @@ class EventForm extends React.Component {
                 type='outline'
                 value={location}
                 handleChange={(e) => this.setState({location: e.target.value})}/>
+            </div>
+          </div>
+          <div className='event-form--line'>
+            <div className='event-form--line--item'>
+              <FileUploader/>
             </div>
           </div>
         </div>
