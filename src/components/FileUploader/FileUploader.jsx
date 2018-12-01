@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 import {UploadIcon, FileIcon} from '../Icons';
+import Button from '../Button';
 
 const mockAttachments = [{
   name: 'Hikoot_Client_Pitch_v2.pdf'
@@ -22,6 +23,16 @@ class FileUploader extends React.Component {
         <li className='file-uploader--file' key={i}>
           <FileIcon width='30' height='30'/>
           <span>{a.name}</span>
+          <div className='file-uploader--file--buttons'>
+            <div>
+              <Button type='text-only'>+ Add Note</Button>
+              <Button type='text-only'>Edit</Button>
+              <Button type='text-only'>Remove</Button>
+            </div>
+            <div>
+              <Button>+ Add Files</Button>
+            </div>
+          </div>
         </li>
       );
     });

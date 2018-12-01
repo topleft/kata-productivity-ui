@@ -40,7 +40,7 @@ Button.propTypes = {
   handleClick: PropTypes.func,
   icon: PropTypes.element,
   skinny: PropTypes.bool,
-  type: PropTypes.oneOf(['outline', 'solid'])
+  type: PropTypes.oneOf(['outline', 'solid', 'text-only'])
 };
 
 export default Button;

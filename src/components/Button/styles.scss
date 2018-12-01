@@ -31,6 +31,11 @@
     background-color: $blue;
     border-color: $blue;
     color: $white;
+
+    &:hover {
+      background-color: transparent;
+      color: $blue;
+    }
   }
 
   &--with-icon {
@@ -45,5 +50,15 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  &--text-only {
+    border: none;
+    background: transparent;
+    color: $grey-text;
+
+    &:hover {
+      color: $blue;
+    }
   }
 }

@@ -19,6 +19,13 @@
    span {
      padding-left: $space*1.5;
    }
+
+   &--buttons {
+     display: flex;
+     justify-content: space-between;
+     padding-left: $space*2;
+     width: 100%;
+   }
  }
 
 
