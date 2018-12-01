@@ -1,0 +1,43 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.file-uploader {
+ &--title {
+  @include form-label;
+ }
+
+ &--attachment-list {
+   margin: $space/2 0 $space*1.5 0;
+
+ }
+
+ &--file {
+   font-size: $font-size-14;
+   display: flex;
+   align-items: center;
+
+   span {
+     padding-left: $space*1.5;
+   }
+
+   &--buttons {
+     display: flex;
+     justify-content: space-between;
+     padding-left: $space*2;
+     width: 100%;
+   }
+ }
+
+
+ &--drop-zone {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 90px;
+   width: 100%;
+   border: 1px dashed $blue;
+   border-radius: 4px;
+   color: $blue;
+   font-size: $font-size-11;
+ }
+}

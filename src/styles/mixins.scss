@@ -1,0 +1,8 @@
+@import './variables.scss';
+
+@mixin form-label {
+  color: $grey-text;
+  font-size: $font-size-11;
+  text-transform: uppercase;
+  padding-left: 2px;
+}

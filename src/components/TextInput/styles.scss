@@ -1,4 +1,5 @@
 @import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
 
 .text-input {
   display: inline-block;
@@ -6,10 +7,7 @@
   position: relative;
 
   & label {
-    color: $grey-text;
-    font-size: $font-size-11;
-    text-transform: uppercase;
-    padding-left: 2px;
+    @include form-label;
   }
 
   & input {
