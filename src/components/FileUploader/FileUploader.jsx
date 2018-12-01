@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
-
+import {UploadIcon, FileIcon} from '../Icons';
 
 const mockAttachments = [{
   name: 'Hikoot_Client_Pitch_v2.pdf'
@@ -19,7 +19,10 @@ class FileUploader extends React.Component {
   renderAttachments() {
     return mockAttachments.map((a, i) => {
       return (
-        <li key={i}>{a.name}</li>
+        <li className='file-uploader--file' key={i}>
+          <FileIcon width='30' height='30'/>
+          <span>{a.name}</span>
+        </li>
       );
     });
   }
@@ -32,16 +35,12 @@ class FileUploader extends React.Component {
           {this.renderAttachments()}
         </ul>
         <div className='file-uploader--drop-zone'>
+          <UploadIcon cloudFillColor='#4192EC' backgroundFillColor='transparent' width={33} height={33}/>
+          <span>You can also drop your files here</span>
         </div>
       </div>
     );
   }
 }
-
-// const FileUploader = () => {
-//   return <div className='__template'></div>;
-// }
-
-// FileUploader.propTypes = {};
 
 export default FileUploader;
