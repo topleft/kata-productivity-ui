@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom';
 import SidebarLink from  '../SidebarLink';
 import './styles.scss';
@@ -14,13 +13,7 @@ import {
   Logo
 } from '../Icons';
 
-class Sidebar extends React.Component {
-  propTypes = {};
-  state = {};
-
-  constructor() {
-    super();
-  }
+class Sidebar extends React.PureComponent {
 
   get links() {
     return [

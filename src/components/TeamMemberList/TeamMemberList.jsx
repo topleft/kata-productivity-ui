@@ -5,23 +5,15 @@ import {CircleCheckIcon, PaperPlaneIcon} from '../Icons';
 import Button from '../Button';
 import './styles.scss';
 
-const teamMembers = [
-  {initials: 'PJ', color: 'yellow'},
-  {initials: 'AJ', color: 'red'},
-  {initials: 'TC', color: 'blue'}
-];
+class TeamMemberList extends React.PureComponent {
 
-class TeamMemberList extends React.Component {
-  state = {}
-  propTypes = {}
-
-  constructor() {
-    super();
+  propTypes = {
+    teamMembers: PropTypes.array,
   }
 
   renderMemberIcons() {
     const colors = ['red', 'blue', 'yellow'];
-    const initials = teamMembers.map((member, i) => {
+    const initials = this.props.teamMembers.map((member, i) => {
       const color = colors[i%colors.length];
       return (
         <div key={i} className={`initials--box initials--box-${color}`}>
@@ -53,11 +45,5 @@ class TeamMemberList extends React.Component {
     );
   }
 }
-
-// const TeamMemberList = () => {
-//   return <div className='TeamMemberList'></div>;
-// }
-
-// TeamMemberList.propTypes = {};
 
 export default TeamMemberList;

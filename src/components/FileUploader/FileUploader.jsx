@@ -1,6 +1,5 @@
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import './styles.scss';
 import {UploadIcon, FileIcon} from '../Icons';
 import Button from '../Button';
@@ -9,13 +8,7 @@ const mockAttachments = [{
   name: 'Hikoot_Client_Pitch_v2.pdf'
 }];
 
-class FileUploader extends React.Component {
-  state = {}
-  propTypes = {}
-
-  constructor() {
-    super();
-  }
+class FileUploader extends React.PureComponent {
 
   renderAttachments() {
     return mockAttachments.map((a, i) => {

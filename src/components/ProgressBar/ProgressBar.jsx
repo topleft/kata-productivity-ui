@@ -33,6 +33,7 @@ const ProgressBar = ({percentComplete, handleCancelClick}) => {
 
 ProgressBar.propTypes = {
   percentComplete: PropTypes.number,
+  handleCancelClick: PropTypes.func,
 };
 
 export default ProgressBar;
