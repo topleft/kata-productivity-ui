@@ -33,11 +33,11 @@ const App = () => (
           <Switch>
             <Route path='/dashboard' component={Dashboard}></Route>
             <Route path='/sessions' component={Sessions}></Route>
-            <Route path='/events' component={WrappedEvents}></Route>
+            <Route path='/' component={WrappedEvents}></Route>
             <Route path='/files' component={Files}></Route>
             <Route path='/conversations' component={Conversations}></Route>
             <Route path='/settings' component={Settings}></Route>
-            <Redirect to={'/events'}/>
+            <Redirect to={'/'}/>
           </Switch>
         </div>
       </div>

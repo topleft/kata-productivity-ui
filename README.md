@@ -1,6 +1,6 @@
 ## Productivity UI
 
-- [Live UI](https://topleft.github.io/events)
+- [Live UI](https://topleft.github.io/kata-productivity-ui/)
 - [Sketch File](https://dribbble.com/shots/3414415-ooto-Productivity-Dashboards/attachments/746493)
 
 ![project screenshot](./productivity_event.png)
