@@ -1,6 +1,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import {CircleCheckIcon} from '../Icons';
 import './styles.scss';
 
 class CheckBoxGroup extends React.Component {
@@ -15,8 +16,11 @@ class CheckBoxGroup extends React.Component {
     return this.props.options.map((box, i) => {
       return (
         <div className='checkbox-group--options--option' key={i}>
-          <input type="checkbox" id={box.name} name={box.name}/>
-          <label htmlFor={box.name}>{box.label}</label>
+          <label htmlFor={box.name}>
+            <input type="checkbox" id={box.name} name={box.name}/>
+            <CircleCheckIcon className={'check'} height={'15'}/>
+            {box.label}
+          </label>
         </div>
       );
     })

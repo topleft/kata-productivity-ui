@@ -17,7 +17,7 @@ const ProgressBar = ({percentComplete, handleCancelClick}) => {
         {
           percentComplete >= 100
             ?
-            <CheckIcon height={14} width={14} fill={'#4192EC'}/>
+            <CheckIcon height={14} width={15} fill={'#4192EC'}/>
             :
             <CancelIcon
               height={14}
