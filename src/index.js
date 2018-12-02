@@ -6,18 +6,22 @@ import Sidebar from './components/Sidebar';
 import Aside from './components/Aside';
 import Events from './components/Events';
 import './styles/main.scss';
+import ContentContainer from './components/ContentContainer';
 
-const Conversations = () => <h1>Conversations</h1>;
+const Conversations = (props) => <ContentContainer {...props} title={'Conversations'}></ContentContainer>;
 
-const Dashboard = () => <h1>Dashboard</h1>;
+const Dashboard = (props) => <ContentContainer {...props} title={'Dashboard'}></ContentContainer>;
 
-const Files = () => <h1>Files</h1>;
+const Files = (props) => <ContentContainer {...props} title={'Files'}></ContentContainer>;
 
-const Sessions = () => <h1>Sessions</h1>;
+const Sessions = (props) => <ContentContainer {...props} title={'Sessions'}></ContentContainer>;
 
-const Settings = () => <h1>Settings</h1>;
+const Settings = (props) => <ContentContainer {...props} title={'Settings'}></ContentContainer>;
 
-const NotFound = () => <h1>404 Not Found</h1>;
+const NotFound = (props) => <ContentContainer {...props} title={'404 Not Found'}></ContentContainer>;
+
+const WrappedEvents = <ContentContainer {...props} title={'Create Event'}><Events/></ContentContainer>;
+
 
 
 const App = () => (
@@ -31,7 +35,7 @@ const App = () => (
           <Switch>
             <Route path='/dashboard' component={Dashboard}></Route>
             <Route path='/sessions' component={Sessions}></Route>
-            <Route path='/events' component={Events}></Route>
+            <Route path='/events' component={WrappedEvents}></Route>
             <Route path='/files' component={Files}></Route>
             <Route path='/conversations' component={Conversations}></Route>
             <Route path='/settings' component={Settings}></Route>
