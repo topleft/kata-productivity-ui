@@ -20,7 +20,7 @@ const CancelIcon = (props) => {
 CancelIcon.defaultProps = {
   title: 'CircleCheckIcon',
   checkFillColor: '#FFF',
-  circleFillColor: '#97C66B'
+  circleFillColor: 'currentColor'
 };
 
 export default CancelIcon;

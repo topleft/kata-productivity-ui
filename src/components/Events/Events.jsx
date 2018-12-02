@@ -15,10 +15,7 @@ class Events extends React.Component {
   render() {
     return (
       <div className='events'>
-        <h1 className='events--title'>Create Event</h1>
-        <div className='events--content'>
-          <EventForm/>
-        </div>
+        <EventForm/>
       </div>
     );
   }

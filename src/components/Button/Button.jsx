@@ -10,6 +10,7 @@ const Button = (props) => {
     className,
     icon,
     skinny,
+    thick,
     type,
   } = props;
 
@@ -18,8 +19,9 @@ const Button = (props) => {
     button--btn button--${type}
     ${Icon ? 'button--with-icon' : ''}
     ${skinny ? 'button--skinny' : ''}
+    ${thick ? 'button--thick' : ''}
+  `;
 
-    `;
   return (
     <div className={`button ${className}`}>
       <button className={buttonClass} onClick={handleClick}>

@@ -44,6 +44,7 @@
    height: 100%;
    margin: 0;
    padding: 0;
+   overflow: hidden;
   }
 
  img {
@@ -177,4 +178,8 @@
 
  .full-height {
    height: 100%;
+ }
+
+ .full-width {
+   width: 100%;
  }
