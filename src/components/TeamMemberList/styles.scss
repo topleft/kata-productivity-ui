@@ -1,0 +1,52 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.team-member-list {
+  &--title {
+    @include form-label;
+  }
+}
+
+.initials {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+
+  &--box {
+    margin-right: 18px;
+    border-radius: 4px;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: $grey-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    span {
+
+    }
+
+    & .icon {
+      top: -5px;
+      right: -5px;
+      position: absolute;
+      z-index: 1;
+    }
+
+    &-blue {
+      color: $blue;
+      background-color: $blue-fade;
+    }
+    &-red {
+      color: $red;
+      background-color: $red-fade;
+    }
+    &-yellow {
+      color: $yellow;
+      background-color: $yellow-fade;
+    }
+  }
+
+}

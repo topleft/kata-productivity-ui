@@ -1,0 +1,31 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.checkbox-group {
+
+
+
+  &--label {
+    @include form-label;
+  }
+  &--options {
+    display: flex;
+    border: 1px solid $grey-light;
+    padding: $space;
+    border-radius: 4px;
+    font-size: $font-size-14;
+
+    &--option {
+      margin: 0 $space 0 0;
+    }
+
+    input {
+      margin-right: 8px;
+    }
+
+    &-horizontal {
+      flex-direction: row;
+    }
+
+  }
+}

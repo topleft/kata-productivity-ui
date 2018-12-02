@@ -5,10 +5,11 @@ import './styles.scss';
 import TextInput from '../TextInput';
 import Button from '../Button';
 import Select from '../Select';
-import NumberInput from '../NumberInput';
+import CheckBoxGroup from '../CheckBoxGroup';
 import IncrementInput from '../IncrementInput';
 import DateInput from '../DateInput';
 import FileUploader from '../FileUploader';
+import TeamMemberList from '../TeamMemberList';
 import {CircleCheckIcon} from '../Icons';
 import moment from 'moment';
 
@@ -24,6 +25,7 @@ class EventForm extends React.Component {
     minute: '0m',
     date: null,
     dateFocused: false,
+    email: ''
 
   }
   propTypes = {}
@@ -97,7 +99,7 @@ class EventForm extends React.Component {
     const sentence = `This event will take place on the ${date.format('Do')} of ${date.format('MMM')} starting at ${startTime}`;
     return (
       <div className='summary-message'>
-        <CircleCheckIcon width={15} height={15}/>
+        <CircleCheckIcon width={15} height={15} circleFillColor='#97C66B'/>
         <span>{sentence}</span>
       </div>
     );
@@ -109,7 +111,9 @@ class EventForm extends React.Component {
       location,
       duration,
       hourValue,
-      minute
+      minute,
+      email,
+      reminder
     } = this.state;
 
     const titleButtonProps = {
@@ -117,10 +121,29 @@ class EventForm extends React.Component {
       type: 'outline'
     }
 
+    const guestsButtonProps = {
+      children: 'Send',
+      type: 'outline'
+    }
+
     const locationButtonProps = {
       children: '+ Set meetings room',
       type: 'outline'
     }
+
+    const reminderOptions = [
+      {label: 1, value: 1},
+      {label: 2, value: 2},
+      {label: 3, value: 3},
+      {label: 4, value: 4},
+      {label: 5, value: 5},
+    ];
+
+    const notificationOptions = [
+      {name: 'Slack', label: 'Slack'},
+      {name: 'Hip Chat', label: 'Hip Chat'},
+    ];
+
     return (
       <div className='event-form'>
         <div className='event-form--main'>
@@ -195,8 +218,46 @@ class EventForm extends React.Component {
           </div>
         </div>
         <div className='event-form--side'>
-          Side
+          <div className='event-form--line'>
+            <div className='event-form--line--item'>
+              <TeamMemberList/>
+            </div>
+          </div>
+          <div className='event-form--line'>
+            <div className='event-form--line--item'>
+              <TextInput
+                button={Button}
+                buttonProps={guestsButtonProps}
+                label='Add guests'
+                name='email'
+                placeholder='Email invitation'
+                type='outline'
+                value={email}
+                handleChange={(e) => this.setState({email: e.target.value})}/>
+            </div>
+          </div>
+          <div className='event-form--line'>
+            <div className='event-form--line--item'>
+              <CheckBoxGroup options={notificationOptions} label='notifications'/>
+            </div>
+          </div>
+          <div className='event-form--line'>
+            <div className='event-form--line--item'>
+              <Select
+                options={reminderOptions}
+                label={'Reminder'}
+                value={reminder}
+                handleSelect={(value) => this.setState({reminder: value})}/>
+            </div>
+          </div>
+          <div className='event-form--line'>
+            <div className='event-form--line--item'>
+              <Button thick className={'full-width'}>Create Event</Button>
+            </div>
+          </div>
         </div>
+
+
       </div>
     );
   }

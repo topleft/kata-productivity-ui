@@ -13,10 +13,11 @@
   }
 
   &--side {
+    background-color: $white;
+    border-radius: 2px;
+    height: 100%;
     padding: $space*2;
     width: 35%;
-    border-radius: 2px;
-    background-color: $white;
   }
 
   &--line {

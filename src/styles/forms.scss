@@ -1,0 +1,29 @@
+@import './mixin.scss';
+
+.form {
+
+  margin-top: $space*3;
+  display: flex;
+
+  &--label {
+    @include form-label;
+  }
+
+  &--line {
+    align-items: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+
+    &--item {
+
+      display: inline-block;
+      margin-bottom: $space*2;
+      padding-right: $space;
+      width: 100%;
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
