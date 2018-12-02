@@ -20,9 +20,7 @@ const Settings = (props) => <ContentContainer {...props} title={'Settings'}></Co
 
 const NotFound = (props) => <ContentContainer {...props} title={'404 Not Found'}></ContentContainer>;
 
-const WrappedEvents = <ContentContainer {...props} title={'Create Event'}><Events/></ContentContainer>;
-
-
+const WrappedEvents = (props) => <ContentContainer {...props} title={'Create Event'}><Events/></ContentContainer>;
 
 const App = () => (
   <BrowserRouter>
