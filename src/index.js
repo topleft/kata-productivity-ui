@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import TopBar from './components/TopBar';
 import Sidebar from './components/Sidebar';
 import Aside from './components/Aside';
@@ -37,7 +37,7 @@ const App = () => (
             <Route path='/files' component={Files}></Route>
             <Route path='/conversations' component={Conversations}></Route>
             <Route path='/settings' component={Settings}></Route>
-            <Route component={NotFound}></Route>
+            <Redirect to={'/events'}/>
           </Switch>
         </div>
       </div>
