@@ -22,7 +22,7 @@ class TeamMemberList extends React.Component {
   renderMemberIcons() {
     const colors = ['red', 'blue', 'yellow'];
     const initials = teamMembers.map((member, i) => {
-      const color = colors[i%colors.length]
+      const color = colors[i%colors.length];
       return (
         <div key={i} className={`initials--box initials--box-${color}`}>
           <span>{member.initials}</span>

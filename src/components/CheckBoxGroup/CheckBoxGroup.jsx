@@ -23,7 +23,7 @@ class CheckBoxGroup extends React.Component {
           </label>
         </div>
       );
-    })
+    });
   }
 
   render() {
@@ -44,7 +44,7 @@ class CheckBoxGroup extends React.Component {
 CheckBoxGroup.propTypes = {
   options: PropTypes.array,
   label: PropTypes.string
-}
+};
 
 
 export default CheckBoxGroup;

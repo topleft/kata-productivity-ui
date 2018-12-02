@@ -27,7 +27,7 @@ const IncrementInput = (props) => {
       </div>
     </div>
   );
-}
+};
 
 IncrementInput.defaultProps = {
   width: '100%'

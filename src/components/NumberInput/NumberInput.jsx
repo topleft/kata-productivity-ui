@@ -28,7 +28,7 @@ const NumberInput = (props) => {
       </div>
     </div>
   );
-}
+};
 
 NumberInput.defaultProps = {
   width: '100%'
