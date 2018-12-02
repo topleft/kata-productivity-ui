@@ -15,9 +15,9 @@ This is part of my UI Kata learning initiative. I find sketch files of UI's on t
 
 ## Design
 
-Thanks to *Adrian Madacs* for the excellent design and sketch files.
-[Dribble Profile](https://dribbble.com/madacs_a)
-[Linkedin Profile](https://www.linkedin.com/in/adrian-madacs-306045b7/)
+Thanks to **Adrian Madacs** for the excellent design and sketch files.
+- [Dribble Profile](https://dribbble.com/madacs_a)
+- [Linkedin Profile](https://www.linkedin.com/in/adrian-madacs-306045b7/)
 
 ## Feedback
 
