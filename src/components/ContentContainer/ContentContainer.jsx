@@ -12,7 +12,7 @@ const ContentContainer = (props) => {
       </div>
     </div>
   );
-}
+};
 
 ContentContainer.propTypes = {
   title: PropTypes.string,

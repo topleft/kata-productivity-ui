@@ -42,6 +42,7 @@ Button.propTypes = {
   handleClick: PropTypes.func,
   icon: PropTypes.element,
   skinny: PropTypes.bool,
+  thick: PropTypes.bool,
   type: PropTypes.oneOf(['outline', 'solid', 'text-only'])
 };
 

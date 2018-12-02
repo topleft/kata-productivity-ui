@@ -27,12 +27,19 @@ const IncrementInput = (props) => {
       </div>
     </div>
   );
-}
+};
 
 IncrementInput.defaultProps = {
   width: '100%'
 };
 
-IncrementInput.propTypes = {};
+IncrementInput.propTypes = {
+  label: PropTypes.string,
+  name: PropTypes.string,
+  value: PropTypes.string,
+  handleChange: PropTypes.func,
+  handleIncrement: PropTypes.func,
+  width: PropTypes.string,
+};
 
 export default IncrementInput;

@@ -1,6 +1,5 @@
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import './styles.scss';
 import {UploadIcon} from '../Icons';
 import UploadCard from '../UploadCard';
@@ -15,7 +14,7 @@ class UploadAside extends React.Component {
 
   get date() {
     const months = ['January', 'February', 'March' , 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    return `${months[new Date().getMonth()]} ${new Date().getDate()}`
+    return `${months[new Date().getMonth()]} ${new Date().getDate()}`;
   }
 
   render() {

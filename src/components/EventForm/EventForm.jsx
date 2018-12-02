@@ -1,6 +1,5 @@
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import './styles.scss';
 import TextInput from '../TextInput';
 import Button from '../Button';
@@ -11,9 +10,6 @@ import DateInput from '../DateInput';
 import FileUploader from '../FileUploader';
 import TeamMemberList from '../TeamMemberList';
 import {CircleCheckIcon} from '../Icons';
-import moment from 'moment';
-
-const hours = [ '12 am', '1 am', '2 am', '3 am', '4 am', '5 am', '6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', '8 pm', '9 pm', '10 pm', '11 pm',]
 
 class EventForm extends React.Component {
   state = {
@@ -26,16 +22,6 @@ class EventForm extends React.Component {
     date: null,
     dateFocused: false,
     email: ''
-
-  }
-  propTypes = {}
-  durationOptions = [
-    {label: '1', value: '1'},
-    {label: '2', value: '2'},
-  ]
-
-  constructor() {
-    super();
   }
 
   handleIncrement(e, name, sign) {
@@ -91,7 +77,7 @@ class EventForm extends React.Component {
   renderTimeSentence() {
     const {date, hourValue, minute} = this.state;
     if (!date) return;
-    const hour = hourValue.replace(/ am| pm/, '')
+    const hour = hourValue.replace(/ am| pm/, '');
     const amPm = hourValue.slice(-2);
     let minutes = minute.replace('m', '');
     minutes = minutes < 10 ? `0${minutes}` : minutes;
@@ -115,34 +101,6 @@ class EventForm extends React.Component {
       email,
       reminder
     } = this.state;
-
-    const titleButtonProps = {
-      children: '+ Add description',
-      type: 'outline'
-    }
-
-    const guestsButtonProps = {
-      children: 'Send',
-      type: 'outline'
-    }
-
-    const locationButtonProps = {
-      children: '+ Set meetings room',
-      type: 'outline'
-    }
-
-    const reminderOptions = [
-      {label: 1, value: 1},
-      {label: 2, value: 2},
-      {label: 3, value: 3},
-      {label: 4, value: 4},
-      {label: 5, value: 5},
-    ];
-
-    const notificationOptions = [
-      {name: 'Slack', label: 'Slack'},
-      {name: 'Hip Chat', label: 'Hip Chat'},
-    ];
 
     return (
       <div className='event-form'>
@@ -187,7 +145,7 @@ class EventForm extends React.Component {
             </div>
             <div className='event-form--line--item' style={{width: '25%'}}>
               <Select
-                options={this.durationOptions}
+                options={durationOptions}
                 label={'Duration'}
                 value={duration}
                 handleSelect={(value) => this.setState({duration: value})}/>
@@ -220,7 +178,7 @@ class EventForm extends React.Component {
         <div className='event-form--side'>
           <div className='event-form--line'>
             <div className='event-form--line--item'>
-              <TeamMemberList/>
+              <TeamMemberList teamMembers={teamMembers}/>
             </div>
           </div>
           <div className='event-form--line'>
@@ -256,11 +214,52 @@ class EventForm extends React.Component {
             </div>
           </div>
         </div>
-
-
       </div>
     );
   }
 }
 
 export default EventForm;
+
+
+
+const hours = [ '12 am', '1 am', '2 am', '3 am', '4 am', '5 am', '6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', '8 pm', '9 pm', '10 pm', '11 pm',];
+
+const titleButtonProps = {
+  children: '+ Add description',
+  type: 'outline'
+};
+
+const guestsButtonProps = {
+  children: 'Send',
+  type: 'outline'
+};
+
+const locationButtonProps = {
+  children: '+ Set meetings room',
+  type: 'outline'
+};
+
+const durationOptions = [
+  {label: '1', value: '1'},
+  {label: '2', value: '2'},
+];
+
+const reminderOptions = [
+  {label: 1, value: 1},
+  {label: 2, value: 2},
+  {label: 3, value: 3},
+  {label: 4, value: 4},
+  {label: 5, value: 5},
+];
+
+const notificationOptions = [
+  {name: 'Slack', label: 'Slack'},
+  {name: 'Hip Chat', label: 'Hip Chat'},
+];
+
+const teamMembers = [
+  {initials: 'PJ'},
+  {initials: 'AJ'},
+  {initials: 'TC'}
+];

@@ -7,7 +7,7 @@ import {CheckIcon, CancelIcon} from '../Icons';
 const ProgressBar = ({percentComplete, handleCancelClick}) => {
   const style = {
     width: `${percentComplete}%`
-  }
+  };
   return (
     <div className='progress-bar'>
       <div className='progress-bar--place'>
@@ -29,10 +29,11 @@ const ProgressBar = ({percentComplete, handleCancelClick}) => {
       </div>
     </div>
   );
-}
+};
 
 ProgressBar.propTypes = {
   percentComplete: PropTypes.number,
+  handleCancelClick: PropTypes.func,
 };
 
 export default ProgressBar;

@@ -33,6 +33,8 @@ UploadCard.propTypes = {
   percentComplete: PropTypes.number,
   fileSize: PropTypes.number,
   fileSizeUnit: PropTypes.string,
+  fileName: PropTypes.string,
+  fileLink: PropTypes.string,
 };
 
 export default UploadCard;

@@ -28,11 +28,18 @@ const NumberInput = (props) => {
       </div>
     </div>
   );
-}
+};
 
 NumberInput.defaultProps = {
   width: '100%'
 };
-NumberInput.propTypes = {};
+NumberInput.propTypes = {
+  label: PropTypes.string,
+  name: PropTypes.string,
+  value: PropTypes.string,
+  handleChange: PropTypes.func,
+  handleIncrement: PropTypes.func,
+  width: PropTypes.string,
+};
 
 export default NumberInput;

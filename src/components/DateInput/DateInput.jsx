@@ -31,6 +31,12 @@ const DateInput = (props) => {
   );
 };
 
-DateInput.propTypes = {};
+DateInput.propTypes = {
+  date: PropTypes.object, // Instance of Moment
+  focused: PropTypes.bool,
+  handleDateChange: PropTypes.func,
+  handleFocusChange: PropTypes.func,
+  label: PropTypes.string
+};
 
 export default DateInput;

@@ -3,15 +3,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-class __Template extends React.Component {
+class Select extends React.Component {
   state = {
     open: false,
     selected: null,
   }
 
-  propTypes = {}
+  propTypes = {
+    options: PropTypes.array,
+    value: PropTypes.string,
+    label: PropTypes.string,
+    width: PropTypes.string,
+    handleSelect: PropTypes.func,
+  }
 
-  defaultProps = {
+  static defaultProps = {
     width: '100%'
   }
 
@@ -55,4 +61,4 @@ class __Template extends React.Component {
   }
 }
 
-export default __Template;
+export default Select;
