@@ -9,18 +9,13 @@ import './styles/main.scss';
 import ContentContainer from './components/ContentContainer';
 
 const Conversations = (props) => <ContentContainer {...props} title={'Conversations'}></ContentContainer>;
-
 const Dashboard = (props) => <ContentContainer {...props} title={'Dashboard'}></ContentContainer>;
-
 const Files = (props) => <ContentContainer {...props} title={'Files'}></ContentContainer>;
-
 const Sessions = (props) => <ContentContainer {...props} title={'Sessions'}></ContentContainer>;
-
 const Settings = (props) => <ContentContainer {...props} title={'Settings'}></ContentContainer>;
-
-const NotFound = (props) => <ContentContainer {...props} title={'404 Not Found'}></ContentContainer>;
-
 const WrappedEvents = (props) => <ContentContainer {...props} title={'Create Event'}><Events/></ContentContainer>;
+
+const pathPrefix = process.env.PATH_PREFIX || '';
 
 const App = () => (
   <BrowserRouter>
@@ -31,13 +26,13 @@ const App = () => (
         <Aside/>
         <div className='content--main'>
           <Switch>
-            <Route path='/dashboard' component={Dashboard}></Route>
-            <Route path='/sessions' component={Sessions}></Route>
-            <Route path='/' component={WrappedEvents}></Route>
-            <Route path='/files' component={Files}></Route>
-            <Route path='/conversations' component={Conversations}></Route>
-            <Route path='/settings' component={Settings}></Route>
-            <Redirect to={'/'}/>
+            <Route path={`${pathPrefix}/dashboard`} component={Dashboard}></Route>
+            <Route path={`${pathPrefix}/sessions`} component={Sessions}></Route>
+            <Route path={`${pathPrefix}/events`} component={WrappedEvents}></Route>
+            <Route path={`${pathPrefix}/files`} component={Files}></Route>
+            <Route path={`${pathPrefix}/conversations`} component={Conversations}></Route>
+            <Route path={`${pathPrefix}/settings`} component={Settings}></Route>
+            <Redirect to={`${pathPrefix}/events`}/>
           </Switch>
         </div>
       </div>
