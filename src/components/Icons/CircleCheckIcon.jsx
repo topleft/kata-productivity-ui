@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from './Icon';
 
 
-const CancelIcon = (props) => {
+const CircleCheckIcon = (props) => {
 
   props.stroke = null; // this icon only uses fill
 
@@ -17,10 +17,10 @@ const CancelIcon = (props) => {
   );
 };
 
-CancelIcon.defaultProps = {
+CircleCheckIcon.defaultProps = {
   title: 'CircleCheckIcon',
   checkFillColor: '#FFF',
   circleFillColor: 'currentColor'
 };
 
-export default CancelIcon;
+export default CircleCheckIcon;

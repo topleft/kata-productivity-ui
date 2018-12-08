@@ -7,4 +7,6 @@ describe('Sidebar', () => {
     const wrapper = shallow(<Sidebar/>);
     expect(wrapper.exists()).toBe(true);
   });
+
+
 });
