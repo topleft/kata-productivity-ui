@@ -6,7 +6,7 @@ import {
   FilesBoardIcon,
   ConversationsIcon,
   SettingsIcon,
-} from '../Components/Icons';
+} from '../components/Icons';
 
 export default [
   {

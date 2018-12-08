@@ -1,18 +1,19 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import SidebarLink from  '../SidebarLink';
-import sidebarConfig from '../../config/sidebar.js';
+import config from '../../config/sidebar';
 import './styles.scss';
 import { Logo } from '../Icons';
 
+
 const renderLinks = (props) => {
-  return sidebarConfig.map((link, i) => {
-    const Icon = link.icon;
+  return config.map((link, i) => {
+    const SidebarIcon = link.icon;
     return <SidebarLink
       key={i}
       to={link.to}
       {...props}>
-      <Icon width={22}/>
+      <SidebarIcon width={22}/>
     </SidebarLink>;
   });
 };
