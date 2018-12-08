@@ -20,7 +20,7 @@ const TextInput = (props) => {
 
   return (
     <div className={`text-input text-input-${type}`}>
-      {label && <label htmlFor={name}>{label}</label>}
+      {label && <label htmlFor={`${name}-id`}>{label}</label>}
       {Icon && <span className='text-input--icon'><Icon width={22}/></span>}
       <input
         className={icon ? 'withIcon' : ''}
@@ -28,8 +28,8 @@ const TextInput = (props) => {
         onChange={handleChange}
         placeholder={placeholder}
         type="text"
+        id={`${name}-id`}
         value={value} />
-
       {Button && <span className='text-input--button'><Button skinny {...buttonProps}/></span>}
     </div>
   );
@@ -41,6 +41,7 @@ TextInput.defaultProps = {
 
 TextInput.propTypes = {
   handleChange: PropTypes.func.isRequired,
+  button: PropTypes.element,
   icon: PropTypes.any,
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
