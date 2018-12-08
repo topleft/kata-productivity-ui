@@ -8,6 +8,7 @@
     "build": "webpack --config ./webpack/config.build.js",
     "test": "jest",
     "test:watch": "jest --watch",
+    "lint": "eslint src/**/**/*.jsx",
     "lint:fix": "eslint --fix src/**/**/*.jsx",
     "svgo": "svgo -f ./src/static",
     "deploy:ghpages": "npm run build && gh-pages -d dist -b gh-pages"
