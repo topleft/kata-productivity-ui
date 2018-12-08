@@ -5,8 +5,9 @@ import TopBar from './components/TopBar';
 import Sidebar from './components/Sidebar';
 import Aside from './components/Aside';
 import Events from './components/Events';
-import './styles/main.scss';
 import ContentContainer from './components/ContentContainer';
+import sidebarConfig from './config/sidebar.js';
+import './styles/main.scss';
 
 const Conversations = (props) => <ContentContainer {...props} title={'Conversations'}></ContentContainer>;
 
@@ -25,7 +26,7 @@ const App = () => (
     <div>
       <div className='content--page'>
         <TopBar/>
-        <Sidebar/>
+        <Sidebar links={sidebarConfig}/>
         <Aside/>
         <div className='content--main'>
           <Switch>

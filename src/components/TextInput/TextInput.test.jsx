@@ -49,4 +49,33 @@ describe('TextInput', () => {
     expect(wrapper.find('Icon').exists()).toBe(true);
   });
 
+  it('button should render if passed as prop', () => {
+    const Button = () => {}; //mock component
+    expect(wrapper.find('Button').exists()).not.toBe(true);
+    wrapper.setProps({button: Button});
+    expect(wrapper.find('Button').exists()).toBe(true);
+    expect(wrapper.find('Button').prop('skinny')).toBe(true);
+  });
+
+  it('should not render a label by default', () => {
+    expect(wrapper.find('label').length).toBe(0);
+  });
+
+  it('should render a label if label prop is passed', () => {
+    const labelText = 'Pasta';
+    wrapper.setProps({'label': labelText});
+    const label = wrapper.find('label');
+    expect(label.length).toBe(1);
+    expect(label.text()).toBe(labelText);
+  });
+
+  it('should apply the input id to the label htmlFor attribute', () => {
+    const labelText = 'Pasta';
+    wrapper.setProps({'label': labelText});
+    const label = wrapper.find('label');
+    const input = wrapper.find('input');
+    expect(label.prop('htmlFor')).toBe(input.prop('id'));
+  });
+
+
 });

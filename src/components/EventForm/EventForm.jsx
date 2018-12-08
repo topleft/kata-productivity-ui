@@ -132,7 +132,7 @@ class EventForm extends React.Component {
                 name='hour'
                 label={'Hour'}
                 value={hourValue}
-                handleIncrement={(e, name, sign) => this.handleHourIncrement(sign)}
+                handleIncrement={(sign) => this.handleHourIncrement(sign)}
                 handleChange={(e) => this.handleHourChange(e)}/>
             </div>
             <div className='event-form--line--item' style={{width: '20%'}}>
@@ -140,7 +140,7 @@ class EventForm extends React.Component {
                 name='minute'
                 label={'Minute'}
                 value={minute}
-                handleIncrement={(e, name, sign) => this.handleMinIncrement(sign)}
+                handleIncrement={(sign) => this.handleMinIncrement(sign)}
                 handleChange={(e) => this.setState({minute: e.target.value})}/>
             </div>
             <div className='event-form--line--item' style={{width: '25%'}}>

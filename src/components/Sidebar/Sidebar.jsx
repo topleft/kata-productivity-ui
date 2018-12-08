@@ -1,19 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom';
 import SidebarLink from  '../SidebarLink';
-import config from '../../config/sidebar';
 import './styles.scss';
 import { Logo } from '../Icons';
 
 
 const renderLinks = (props) => {
-  return config.map((link, i) => {
-    const SidebarIcon = link.icon;
+  return props.links.map((link, i) => {
     return <SidebarLink
       key={i}
       to={link.to}
       {...props}>
-      <SidebarIcon width={22}/>
+      <link.icon width={22}/>
     </SidebarLink>;
   });
 };
@@ -30,6 +29,16 @@ const Sidebar = (props) => {
       </nav>
     </div>
   );
+};
+
+Sidebar.propTypes = {
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      to: PropTypes.string,
+      label: PropTypes.string,
+      icon: PropTypes.element,
+    })
+  ).isRequired
 };
 
 export default withRouter(Sidebar);
