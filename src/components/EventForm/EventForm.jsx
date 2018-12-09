@@ -65,6 +65,15 @@ class EventForm extends React.Component {
     });
   }
 
+  handleHourChange(e) {
+    const {value} = e.target;
+    if (value.match(/^([2-9]|1[0-2]?)?\s(a?m?|p?m?)$/)) {
+      const hourIndex = hours.indexOf(value);
+      console.log(hourIndex)
+      this.setState({hourValue: value, hourIndex})
+    };
+  }
+
   handleMinIncrement(sign) {
     const val = sign === '+' ? 1 : -1;
     this.setState((state) => {
@@ -81,20 +90,10 @@ class EventForm extends React.Component {
     });
   }
 
-  handleHourChange(e) {
-    const {value} = e.target;
-    // @TODO
-    // const regex = \^[1-12] (am|pm)$\
-    // if value meets regex set state
-    this.setState({hourValue: value});
-  }
-
   handleMinChange(e) {
     const {value} = e.target;
-    // @TODO
-    // const regex = \^[1-12] (m)$\
-    // if value meets regex set state
-    this.setState({hourValue: value});
+    const regex = /^([0-9]?|([1-5][0-9])?)m$/;
+    if (value.match(regex)) this.setState({minute: value});
   }
 
   renderTimeSentence() {
@@ -166,7 +165,7 @@ class EventForm extends React.Component {
                 label={'Minute'}
                 value={minute}
                 handleIncrement={(sign) => this.handleMinIncrement(sign)}
-                handleChange={(e) => this.setState({minute: e.target.value})}/>
+                handleChange={(e) => this.handleMinChange(e)}/>
             </div>
             <div className='event-form--line--item' style={{width: '25%'}}>
               <Select
