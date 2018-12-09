@@ -77,5 +77,40 @@ describe('TextInput', () => {
     expect(label.prop('htmlFor')).toBe(input.prop('id'));
   });
 
+  it('should render error message based validator result', () => {
+    let error;
+    const input = wrapper.find('input');
+    const validator = (value) => ({isValid: value});
+
+    wrapper.setProps({'validator': validator, value: true});
+    input.simulate('blur');
+    error = wrapper.find('.text-input--error-message');
+    expect(error.exists()).toBe(false);
+
+    wrapper.setProps({'validator': validator, value: false});
+    input.simulate('blur');
+    error = wrapper.find('.text-input--error-message');
+    expect(error.exists()).toBe(true);
+  });
+
+  it('should render default error message if none is passed', () => {
+    const input = wrapper.find('input');
+    const validator = (value) => ({isValid: value});
+    wrapper.setProps({'validator': validator, value: false});
+    input.simulate('blur');
+    const error = wrapper.find('.text-input--error-message');
+    expect(error.text()).toBe('Invalid');
+  });
+
+  it('should render custom error message', () => {
+    const errorText = 'Custom Error';
+    const input = wrapper.find('input');
+    const validator = (value) => ({isValid: value, error: errorText});
+    wrapper.setProps({'validator': validator, value: false});
+    input.simulate('blur');
+    const error = wrapper.find('.text-input--error-message');
+    expect(error.text()).toBe(errorText);
+  });
+
 
 });

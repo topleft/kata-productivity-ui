@@ -69,4 +69,12 @@
   ::placeholder {
     color: $grey-text;
   }
+
+  &--error-message {
+    color: $red-error;
+    font-size: $font-size-11;
+    position: absolute;
+    bottom: -16px;
+    left: 6px;
+  }
 }

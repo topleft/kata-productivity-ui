@@ -12,6 +12,7 @@ import TeamMemberList from '../TeamMemberList';
 import {CircleCheckIcon} from '../Icons';
 
 class EventForm extends React.Component {
+
   state = {
     title: '',
     location: '',
@@ -21,7 +22,29 @@ class EventForm extends React.Component {
     minute: '0m',
     date: null,
     dateFocused: false,
-    email: ''
+    email: '',
+    isFormComplete: false,
+  }
+
+  validators = {
+    title: (value) => {
+      const result = {isValid: true};
+      if (value.length < 8) {
+        result.isValid = false;
+        result.error = 'Not long enough';
+        this.setState({isFormComplete: false})
+      }
+      return result;
+    },
+    location: (value) => {
+      const result = {isValid: true};
+      if (!value) {
+        result.isValid = false;
+        result.error = 'Required';
+        this.setState({isFormComplete: false})
+      }
+      return result;
+    }
   }
 
   handleIncrement(e, name, sign) {
@@ -99,7 +122,8 @@ class EventForm extends React.Component {
       hourValue,
       minute,
       email,
-      reminder
+      reminder,
+      isFormComplete
     } = this.state;
 
     return (
@@ -115,6 +139,7 @@ class EventForm extends React.Component {
                 placeholder='Enter a title...'
                 type='outline'
                 value={title}
+                validator={(value) => this.validators.title(value)}
                 handleChange={(e) => this.setState({title: e.target.value})}/>
             </div>
           </div>
@@ -166,6 +191,7 @@ class EventForm extends React.Component {
                 placeholder='Enter a location...'
                 type='outline'
                 value={location}
+                validator={(value) => this.validators.location(value)}
                 handleChange={(e) => this.setState({location: e.target.value})}/>
             </div>
           </div>
@@ -210,7 +236,7 @@ class EventForm extends React.Component {
           </div>
           <div className='event-form--line'>
             <div className='event-form--line--item'>
-              <Button thick className={'full-width'}>Create Event</Button>
+              <Button thick disabled={!isFormComplete} className={'full-width'}>Create Event</Button>
             </div>
           </div>
         </div>

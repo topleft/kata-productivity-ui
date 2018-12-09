@@ -8,24 +8,24 @@ const Button = (props) => {
     handleClick,
     children,
     className,
-    icon,
+    disabled,
     skinny,
     thick,
     type,
   } = props;
 
-  const Icon = icon; // needs to be a capitalized for react to know it is a component
   const buttonClass = `
     button--btn button--${type}
-    ${Icon ? 'button--with-icon' : ''}
+    ${props.icon ? 'button--with-icon' : ''}
     ${skinny ? 'button--skinny' : ''}
     ${thick ? 'button--thick' : ''}
+    ${disabled ? 'button--disabled' : ''}
   `;
 
   return (
     <div className={`button ${className}`}>
-      <button className={buttonClass} onClick={handleClick}>
-        {Icon && <Icon className={'button--icon'} width={20} height={20}/>}
+      <button className={buttonClass} onClick={disabled ? null : handleClick}>
+        {props.icon && <props.icon className={'button--icon'} width={20} height={20}/>}
         {children}
       </button>
     </div>
@@ -39,6 +39,7 @@ Button.defaultProps = {
 Button.propTypes = {
   children: PropTypes.any,
   className: PropTypes.string,
+  disabled: PropTypes.bool,
   handleClick: PropTypes.func,
   icon: PropTypes.element,
   skinny: PropTypes.bool,
