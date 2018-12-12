@@ -70,7 +70,7 @@ module.exports = {
       filename: 'style.[contenthash].css',
     }),
     new webpack.DefinePlugin({
-      PATH_PREFIX: '/kata-productivity-ui'
+      'process.env': JSON.stringify({PATH_PREFIX: '/kata-productivity-ui'})
     })
   ],
 };

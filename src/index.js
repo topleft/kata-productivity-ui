@@ -17,8 +17,10 @@ const WrappedEvents = (props) => <ContentContainer {...props} title={'Create Eve
 
 const pathPrefix = process.env.PATH_PREFIX || '';
 
+console.log('helllllloooooooo',`${pathPrefix}`)
+
 const App = () => (
-  <BrowserRouter>
+  <BrowserRouter basename={pathPrefix}>
     <div>
       <div className='content--page'>
         <TopBar/>
@@ -26,13 +28,13 @@ const App = () => (
         <Aside/>
         <div className='content--main'>
           <Switch>
-            <Route path={`${pathPrefix}/dashboard`} component={Dashboard}></Route>
-            <Route path={`${pathPrefix}/sessions`} component={Sessions}></Route>
-            <Route path={`${pathPrefix}/events`} component={WrappedEvents}></Route>
-            <Route path={`${pathPrefix}/files`} component={Files}></Route>
-            <Route path={`${pathPrefix}/conversations`} component={Conversations}></Route>
-            <Route path={`${pathPrefix}/settings`} component={Settings}></Route>
-            <Redirect to={`${pathPrefix}/events`}/>
+            <Route path={`/dashboard`} component={Dashboard}></Route>
+            <Route path={`/sessions`} component={Sessions}></Route>
+            <Route path={`/`} component={WrappedEvents}></Route>
+            <Route path={`/files`} component={Files}></Route>
+            <Route path={`/conversations`} component={Conversations}></Route>
+            <Route path={`/settings`} component={Settings}></Route>
+            <Redirect to={`/`}/>
           </Switch>
         </div>
       </div>

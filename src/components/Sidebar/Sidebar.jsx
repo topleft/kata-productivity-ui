@@ -13,39 +13,37 @@ import {
   Logo
 } from '../Icons';
 
-const pathPrefix = process.env.PATH_PREFIX || '';
-
 class Sidebar extends React.PureComponent {
 
   get links() {
     return [
       {
-        to: `${pathPrefix}/dashboard`,
+        to: '/dashboard',
         label: 'Dashboard',
         icon: DashboardIcon,
       },
       {
-        to: `${pathPrefix}/sessions`,
+        to: '/sessions',
         label: 'sessions',
         icon: SessionsIcon
       },
       {
-        to: `${pathPrefix}/events`,
+        to: '/',
         label: 'events',
         icon: EventsIcon
       },
       {
-        to: `${pathPrefix}/files`,
+        to: '/files',
         label: 'Files',
         icon: FilesBoardIcon
       },
       {
-        to: `${pathPrefix}/conversations`,
+        to: '/conversations',
         label: 'Conversations',
         icon: ConversationsIcon
       },
       {
-        to: `${pathPrefix}/settings`,
+        to: '/settings',
         label: 'Settings',
         icon: SettingsIcon
       },
