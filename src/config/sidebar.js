@@ -13,30 +13,36 @@ export default [
     to: '/dashboard',
     label: 'Dashboard',
     icon: DashboardIcon,
+    exact: true,
   },
   {
     to: '/sessions',
     label: 'sessions',
-    icon: SessionsIcon
+    icon: SessionsIcon,
+    exact: true,
   },
   {
-    to: '/events',
+    to: '/',
     label: 'events',
-    icon: EventsIcon
+    icon: EventsIcon,
+    exact: true,
   },
   {
     to: '/files',
     label: 'Files',
-    icon: FilesBoardIcon
+    icon: FilesBoardIcon,
+    exact: true,
   },
   {
     to: '/conversations',
     label: 'Conversations',
-    icon: ConversationsIcon
+    icon: ConversationsIcon,
+    exact: true,
   },
   {
     to: '/Settings',
     label: 'Settings',
-    icon: SettingsIcon
+    icon: SettingsIcon,
+    exact: true,
   },
 ];

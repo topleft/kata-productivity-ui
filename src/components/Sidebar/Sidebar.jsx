@@ -10,7 +10,7 @@ const renderLinks = (props) => {
   return props.links.map((link, i) => {
     return <SidebarLink
       key={i}
-      to={link.to}
+      {...link}
       {...props}>
       <link.icon width={22}/>
     </SidebarLink>;
