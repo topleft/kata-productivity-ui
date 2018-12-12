@@ -21,31 +21,37 @@ class Sidebar extends React.PureComponent {
         to: '/dashboard',
         label: 'Dashboard',
         icon: DashboardIcon,
+        exact: true,
       },
       {
         to: '/sessions',
         label: 'sessions',
-        icon: SessionsIcon
+        icon: SessionsIcon,
+        exact: true,
       },
       {
-        to: '/events',
+        to: '/',
         label: 'events',
-        icon: EventsIcon
+        icon: EventsIcon,
+        exact: true,
       },
       {
         to: '/files',
         label: 'Files',
-        icon: FilesBoardIcon
+        icon: FilesBoardIcon,
+        exact: true,
       },
       {
         to: '/conversations',
         label: 'Conversations',
-        icon: ConversationsIcon
+        icon: ConversationsIcon,
+        exact: true,
       },
       {
-        to: '/Settings',
+        to: '/settings',
         label: 'Settings',
-        icon: SettingsIcon
+        icon: SettingsIcon,
+        exact: true,
       },
     ];
   }
@@ -55,7 +61,7 @@ class Sidebar extends React.PureComponent {
       const Icon = link.icon;
       return <SidebarLink
         key={i}
-        to={link.to}
+        {...link}
         {...this.props}>
         <Icon width={22}/>
       </SidebarLink>;

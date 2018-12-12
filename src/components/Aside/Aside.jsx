@@ -8,13 +8,12 @@ const Aside = () => {
   return (
     <div className='aside'>
       <Switch>
-        <Route path='/dashboard' component={null}></Route>
-        <Route path='/sessions' component={null}></Route>
-        <Route path='/events' component={UploadAside}></Route>
-        <Route path='/files' component={null}></Route>
-        <Route path='/conversations' component={null}></Route>
-        <Route path='/settings' component={null}></Route>
-        <Route component={null}></Route>
+        <Route path={'/dashboard'} component={null}></Route>
+        <Route path={'/sessions'} component={null}></Route>
+        <Route exact path={'/'} component={UploadAside}></Route>
+        <Route path={'/files'} component={null}></Route>
+        <Route path={'/conversations'} component={null}></Route>
+        <Route path={'/settings'} component={null}></Route>
       </Switch>
     </div>
   );

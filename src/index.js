@@ -9,21 +9,18 @@ import './styles/main.scss';
 import ContentContainer from './components/ContentContainer';
 
 const Conversations = (props) => <ContentContainer {...props} title={'Conversations'}></ContentContainer>;
-
 const Dashboard = (props) => <ContentContainer {...props} title={'Dashboard'}></ContentContainer>;
-
 const Files = (props) => <ContentContainer {...props} title={'Files'}></ContentContainer>;
-
 const Sessions = (props) => <ContentContainer {...props} title={'Sessions'}></ContentContainer>;
-
 const Settings = (props) => <ContentContainer {...props} title={'Settings'}></ContentContainer>;
-
-const NotFound = (props) => <ContentContainer {...props} title={'404 Not Found'}></ContentContainer>;
-
 const WrappedEvents = (props) => <ContentContainer {...props} title={'Create Event'}><Events/></ContentContainer>;
 
+const pathPrefix = process.env.PATH_PREFIX || '';
+
+console.log('helllllloooooooo',`${pathPrefix}`)
+
 const App = () => (
-  <BrowserRouter>
+  <BrowserRouter basename={pathPrefix}>
     <div>
       <div className='content--page'>
         <TopBar/>
@@ -31,13 +28,13 @@ const App = () => (
         <Aside/>
         <div className='content--main'>
           <Switch>
-            <Route path='/dashboard' component={Dashboard}></Route>
-            <Route path='/sessions' component={Sessions}></Route>
-            <Route path='/' component={WrappedEvents}></Route>
-            <Route path='/files' component={Files}></Route>
-            <Route path='/conversations' component={Conversations}></Route>
-            <Route path='/settings' component={Settings}></Route>
-            <Redirect to={'/'}/>
+            <Route path={`/dashboard`} component={Dashboard}></Route>
+            <Route path={`/sessions`} component={Sessions}></Route>
+            <Route exact path={`/`} component={WrappedEvents}></Route>
+            <Route path={`/files`} component={Files}></Route>
+            <Route path={`/conversations`} component={Conversations}></Route>
+            <Route path={`/settings`} component={Settings}></Route>
+            <Redirect to={`/`}/>
           </Switch>
         </div>
       </div>

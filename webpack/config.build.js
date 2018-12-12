@@ -68,6 +68,9 @@ module.exports = {
     new HtmlWebpackPlugin({template: path.join(APP_PATH, 'template.html')}),
     new MiniCssExtractPlugin({
       filename: 'style.[contenthash].css',
+    }),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify({PATH_PREFIX: '/kata-productivity-ui'})
     })
   ],
 };
