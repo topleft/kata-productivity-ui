@@ -10,18 +10,43 @@ import DateInput from '../DateInput';
 import FileUploader from '../FileUploader';
 import TeamMemberList from '../TeamMemberList';
 import {CircleCheckIcon} from '../Icons';
+import moment from 'moment';
 
 class EventForm extends React.Component {
+
   state = {
     title: '',
     location: '',
     duration: null,
+    durationDisplay: '',
     hourIndex: 8,
     hourValue: hours[8],
     minute: '0m',
     date: null,
     dateFocused: false,
-    email: ''
+    email: '',
+    isFormComplete: false,
+  }
+
+  validators = {
+    title: (value) => {
+      const result = {isValid: true};
+      if (value.length < 8) {
+        result.isValid = false;
+        result.error = 'Not long enough';
+        this.setState({isFormComplete: false});
+      }
+      return result;
+    },
+    location: (value) => {
+      const result = {isValid: true};
+      if (!value) {
+        result.isValid = false;
+        result.error = 'Required';
+        this.setState({isFormComplete: false});
+      }
+      return result;
+    }
   }
 
   handleIncrement(e, name, sign) {
@@ -42,6 +67,15 @@ class EventForm extends React.Component {
     });
   }
 
+  handleHourChange(e) {
+    const {value} = e.target;
+    if (value.match(/^([2-9]|1[0-2]?)?\s(a?m?|p?m?)$/)) {
+      const hourIndex = hours.indexOf(value);
+      console.log(hourIndex);
+      this.setState({hourValue: value, hourIndex});
+    }
+  }
+
   handleMinIncrement(sign) {
     const val = sign === '+' ? 1 : -1;
     this.setState((state) => {
@@ -58,20 +92,10 @@ class EventForm extends React.Component {
     });
   }
 
-  handleHourChange(e) {
-    const {value} = e.target;
-    // @TODO
-    // const regex = \^[1-12] (am|pm)$\
-    // if value meets regex set state
-    this.setState({hourValue: value});
-  }
-
   handleMinChange(e) {
     const {value} = e.target;
-    // @TODO
-    // const regex = \^[1-12] (m)$\
-    // if value meets regex set state
-    this.setState({hourValue: value});
+    const regex = /^([0-9]?|([1-5][0-9])?)m$/;
+    if (value.match(regex)) this.setState({minute: value});
   }
 
   renderTimeSentence() {
@@ -96,10 +120,12 @@ class EventForm extends React.Component {
       title,
       location,
       duration,
+      durationDisplay,
       hourValue,
       minute,
       email,
-      reminder
+      reminder,
+      isFormComplete
     } = this.state;
 
     return (
@@ -115,6 +141,7 @@ class EventForm extends React.Component {
                 placeholder='Enter a title...'
                 type='outline'
                 value={title}
+                validator={(value) => this.validators.title(value)}
                 handleChange={(e) => this.setState({title: e.target.value})}/>
             </div>
           </div>
@@ -132,7 +159,7 @@ class EventForm extends React.Component {
                 name='hour'
                 label={'Hour'}
                 value={hourValue}
-                handleIncrement={(e, name, sign) => this.handleHourIncrement(sign)}
+                handleIncrement={(sign) => this.handleHourIncrement(sign)}
                 handleChange={(e) => this.handleHourChange(e)}/>
             </div>
             <div className='event-form--line--item' style={{width: '20%'}}>
@@ -140,15 +167,21 @@ class EventForm extends React.Component {
                 name='minute'
                 label={'Minute'}
                 value={minute}
-                handleIncrement={(e, name, sign) => this.handleMinIncrement(sign)}
-                handleChange={(e) => this.setState({minute: e.target.value})}/>
+                handleIncrement={(sign) => this.handleMinIncrement(sign)}
+                handleChange={(e) => this.handleMinChange(e)}/>
             </div>
             <div className='event-form--line--item' style={{width: '25%'}}>
               <Select
                 options={durationOptions}
                 label={'Duration'}
                 value={duration}
-                handleSelect={(value) => this.setState({duration: value})}/>
+                displayValue={durationDisplay}
+                handleSelect={({value, display}) =>
+                  this.setState({
+                    duration: value,
+                    durationDisplay: display
+                  })
+                }/>
             </div>
           </div>
           <div className='event-form--line'>
@@ -166,6 +199,7 @@ class EventForm extends React.Component {
                 placeholder='Enter a location...'
                 type='outline'
                 value={location}
+                validator={(value) => this.validators.location(value)}
                 handleChange={(e) => this.setState({location: e.target.value})}/>
             </div>
           </div>
@@ -210,7 +244,7 @@ class EventForm extends React.Component {
           </div>
           <div className='event-form--line'>
             <div className='event-form--line--item'>
-              <Button thick className={'full-width'}>Create Event</Button>
+              <Button thick disabled={!isFormComplete} className={'full-width'}>Create Event</Button>
             </div>
           </div>
         </div>
@@ -240,17 +274,28 @@ const locationButtonProps = {
   type: 'outline'
 };
 
-const durationOptions = [
-  {label: '1', value: '1'},
-  {label: '2', value: '2'},
-];
+const durationOptions = 'x'.repeat(16).split('').map((x, i) => {
+  const total = (i+1)*15;
+  const duration = moment.duration(total, 'minutes');
+  let option;
+  if (total < 60) {
+    option = {display: `${total} min`, value: total};
+  } else if (total === 60) {
+    option = {display: '1 hr', value: total};
+  } else {
+    option = {display: `${duration.get('hours')}hr ${duration.get('minutes')}m`, value: total};
+  }
+  return option;
+});
+
+
 
 const reminderOptions = [
-  {label: 1, value: 1},
-  {label: 2, value: 2},
-  {label: 3, value: 3},
-  {label: 4, value: 4},
-  {label: 5, value: 5},
+  {display: 1, value: 1},
+  {display: 2, value: 2},
+  {display: 3, value: 3},
+  {display: 4, value: 4},
+  {display: 5, value: 5},
 ];
 
 const notificationOptions = [

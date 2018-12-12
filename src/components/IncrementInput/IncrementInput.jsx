@@ -6,6 +6,7 @@ const IncrementInput = (props) => {
   const {
     label,
     name,
+    placeholder,
     value,
     handleChange,
     handleIncrement,
@@ -14,16 +15,17 @@ const IncrementInput = (props) => {
 
   return (
     <div className='increment-input' style={{width: width}}>
-      {label && <label htmlFor={name}>{label}</label>}
+      {label && <label htmlFor={`${name}-id`}>{label}</label>}
       <input
         value={value}
         onChange={handleChange}
         name={name}
         id={`${name}-id`}
+        placeholder={placeholder}
         type="text"/>
       <div className='increment-input--buttons'>
-        <button className='up' onClick={(e) => handleIncrement(e, name, '+')}>+</button>
-        <button className='down' onClick={(e) => handleIncrement(e, name, '-')}>-</button>
+        <button className='up' onClick={() => handleIncrement('+')}>+</button>
+        <button className='down' onClick={() => handleIncrement('-')}>-</button>
       </div>
     </div>
   );
@@ -36,6 +38,7 @@ IncrementInput.defaultProps = {
 IncrementInput.propTypes = {
   label: PropTypes.string,
   name: PropTypes.string,
+  placeholder: PropTypes.string,
   value: PropTypes.string,
   handleChange: PropTypes.func,
   handleIncrement: PropTypes.func,

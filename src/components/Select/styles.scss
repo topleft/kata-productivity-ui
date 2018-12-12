@@ -59,9 +59,17 @@
   &--option {
     padding: $space;
 
+    &.selected {
+      background-color: $blue-background;
+    }
+
     &:hover, &:focus {
       background-color: $blue;
       color: $white;
     }
+
+
   }
+
+
 }

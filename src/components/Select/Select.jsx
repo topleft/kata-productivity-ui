@@ -31,14 +31,14 @@ class Select extends React.Component {
   }
 
   render() {
-    const {options, value, label, width} = this.props;
+    const {options, value, displayValue, label, width} = this.props;
 
     return (
       <div className="select" onClick={() => this.setState({open: !this.state.open})} style={{width: width}}>
         <label className="select--label" id="age-label">{label}</label>
         <div className="select--input">
           <div className="select--combobox" role="combobox" tabIndex="0" aria-autocomplete="none" aria-owns="age-list" aria-expanded="false" aria-labelledby="age-label" aria-required="true" aria-activedescendant="default">
-            <div className="select--value">{value || 'Select...'}</div>
+            <div className="select--value">{displayValue || 'Select...'}</div>
           </div>
           <ul className={`select--listbox ${this.state.open ? 'open': ''}`} role="listbox" id="age-list">
             {
@@ -46,10 +46,10 @@ class Select extends React.Component {
                 return (
                   <li
                     key={i}
-                    className="select--option"
+                    className={`select--option ${value === option.value ? 'selected' : null}`}
                     role="option"
-                    onClick={() => this.handleSelect(option.value)}>
-                    {option.label}
+                    onClick={() => this.handleSelect(option)}>
+                    {option.display}
                   </li>
                 );
               })

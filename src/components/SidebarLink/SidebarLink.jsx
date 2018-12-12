@@ -16,8 +16,8 @@ const SidebarLink = (props) => {
 };
 
 SidebarLink.propTypes = {
-  children: PropTypes.any,
-  to: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  to: PropTypes.string.isRequired,
 };
 
 export default SidebarLink;

@@ -73,4 +73,15 @@
     }
   }
 
+  &--disabled {
+    color: $grey-text;
+    border-color: $grey-text;
+    background: transparent;
+    cursor: not-allowed;
+
+    &:hover {
+      color: $grey-text;
+    }
+  }
+
 }

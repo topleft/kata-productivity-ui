@@ -40,7 +40,6 @@ class TeamMemberList extends React.PureComponent {
       <div className='team-member-list'>
         <p className='team-member-list--title'>Add Team Members</p>
         {this.renderMemberIcons()}
-
       </div>
     );
   }
