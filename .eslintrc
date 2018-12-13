@@ -22,6 +22,10 @@
     "always"
     ]
   },
+  "globals": {
+    "cy": true,
+    "before": true,
+  },
   "env": {
     "es6": true,
     "node": true,
